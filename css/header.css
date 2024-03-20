@@ -4,50 +4,24 @@ body {
 }
 
 .header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-attachment: scroll;
-    /* 背景滚动方式为滚动 */
-    background-clip: border-box;
-    /* 背景裁剪为边框框盒 */
-    background-color: rgb(17, 131, 251);
-    /* 背景颜色为RGB(17, 131, 251) */
-    background-image: linear-gradient(-90deg, rgb(10, 72, 209) 0px, rgb(17, 131, 251) 100%);
-    /* 背景图像为线性渐变，从RGB(10, 72, 209)到RGB(17, 131, 251)，方向为从上到下 */
-    padding: 10px;
-    border-bottom-color: rgb(233, 242, 251);
-    /* 底部边框颜色为RGB(233, 242, 251) */
-    border-top-color: rgb(12, 100, 235);
-    /* 顶部边框颜色为RGB(12, 100, 235) */
-    color: rgb(255, 255, 255);
-    /* 文本颜色为RGB(255, 255, 255) */
-    height: 30px;
-    /* 元素高度为50像素 */
-    background-position-x: 0%;
-    /* 背景水平位置为0% */
-    background-position-y: 0%;
-    /* 背景垂直位置为0% */
-    line-height: 18.5714px;
-    /* 行高为18.5714像素 */
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(-90deg, rgb(10, 72, 209), rgb(17, 131, 251));
+        background-attachment: scroll;
+        background-clip: border-box;
+        background-color: rgb(17, 131, 251);
+        padding: 10px;
+        border-color: rgb(12, 100, 235) rgb(233, 242, 251);
+        color: rgb(255, 255, 255);
+        height: 30px;
+        background-position: 0% 0%;
+    
 
-    text-size-adjust: 100%;
-    /* 文本大小调整为100% */
-    font-size: 13px;
-    /* 字体大小为13像素 */
-    background-repeat: repeat;
-    /* 背景平铺方式为重复 */
-    background-size: auto;
-    /* 背景尺寸为自动适应 */
-    background-origin: padding-box;
-    /* 背景位置起点为内边距框盒 */
-
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    /* WebKit点击高亮颜色为RGBA(0, 0, 0, 0) */
 }
 
 .header h1 {

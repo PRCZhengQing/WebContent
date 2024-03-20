@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/editpanel.js"></script>
+    <link rel="stylesheet" href="./css/editpanel.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <title>维护模块</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1 id="BugManager" title="BugManager">BugManager</h1>
+        <div class="nav">
+          <ul>
+            <li><a href="/My.html">我的地盘</a></li>
+          </ul>
+        </div>
+        <div class="user">
+          <span id="userName">魏志航</span>
+          <div id="userDropdown" class="dropdown-content">
+            <a href="./MyProfile.html">个人档案</a>
+            <a href="./Login.html">退出</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-container">
+        <div id="list-container">
+          <ul class="item-list">
+            <li>
+              <input type="text" class="input-field" value="">
+              <button class="add-btn"><img src="./image/icon/加号.svg" alt="add"></button>
+              <button class="remove-btn"><img src="./image/icon/乘号.svg" alt="Remove"></button>
+            </li>
+          </ul>
+        </div>
+        <div class="button-container">
+          <button id="save-btn">保存</button>
+          <button id="back-btn" >返回</button>
+        </div>
+      </div>
+    <script>
+       $("#back-btn").click(function(){
+        location.href="./BugList.html";
+      }) 
+    </script>
+      
+</body>
+
+</html>
