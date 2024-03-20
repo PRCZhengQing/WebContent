@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/zh-cn.default.css">
+    <title>新增用户</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1 id="BugManager" title="BugManager">BugManager</h1>
+        <div class="nav">
+            <ul>
+                <li><a href="/My.html">我的地盘</a></li>
+            </ul>
+        </div>
+        <div class="user">
+            <span id="userName">魏志航</span>
+            <div id="userDropdown" class="dropdown-content">
+                <a href="./MyProfile.html">个人档案</a>
+                <a href="./Login.html">退出</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="MainBody" style="margin-top: 40px;">
+        <main id="main">
+            <div class="container">
+                <div id="mainContent" class="main-content">
+                    <div class="main-header">
+                        <h2><i class="icon-pencil"></i> 新增用户</h2>
+                    </div>
+                    <form method="post" target="hiddenwin" id="dataform">
+                        <table class="table table-form">
+                            <caption>基本信息</caption>
+                            <tbody>
+                                <tr>
+                                    <th class="w-90px">真实姓名</th>
+                                    <td class="required"><input type="text" name="realname" id="realname" value="产品经理"
+                                            class="form-control" autocomplete="off">
+                                    </td>
+                                    <th class="w-140px">邮箱</th>
+                                    <td><input type="text" name="email" id="email" value="" class="form-control"
+                                            autocomplete="off">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>性别</th>
+                                    <td><label class="radio-inline"><input type="radio" name="gender" value="m"
+                                                checked="checked" id="genderm"> 男</label><label
+                                            class="radio-inline"><input type="radio" name="gender" value="f"
+                                                id="genderf"> 女</label></td>
+                                    <th>出生年</th>
+                                    <td><input type="date" name="birthday" id="birthday" value="0000-00-00"
+                                            class="form-date form-control" autocomplete="off">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>入职日期</th>
+                                    <td class="text-middle">
+                                        2023-04-27
+                                        <input type="hidden" name="join" id="join" value="2023-04-27" />
+                                        <select name="groups[]" id="groups" multiple="multiple"
+                                            class="form-control hidden">
+                                            <option value="1" title="管理员" data-keys="guanliyuan gly">管理员</option>
+                                            <option value="2" title="研发" data-keys="yanfa yf">研发</option>
+                                            <option value="3" title="测试" data-keys="ceshi cs">测试</option>
+                                            <option value="4" title="项目经理" data-keys="xiangmujingli xmjl">项目经理</option>
+                                            <option value="5" selected="selected" title="产品经理"
+                                                data-keys="chanpinjingli cpjl">产品经理</option>
+                                            <option value="6" title="研发主管" data-keys="yanfazhuguan yfzg">研发主管</option>
+                                            <option value="7" title="产品主管" data-keys="chanpinzhuguan cpzg">产品主管</option>
+                                            <option value="8" title="测试主管" data-keys="ceshizhuguan cszg">测试主管</option>
+                                            <option value="9" title="高层管理" data-keys="gaocengguanli gcgl">高层管理</option>
+                                            <option value="10" title="其他" data-keys="qita qt">其他</option>
+                                            <option value="11" title="guest" data-keys="guest g">guest</option>
+                                            <option value="12" title="受限用户" data-keys="shouxianyonghu sxyh">受限用户
+                                            </option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-form">
+                            <caption>帐号信息</caption>
+                            <tbody>
+                                <tr>
+                                    <th class="w-90px">用户名</th>
+                                    <td class="required"><input type="text" name="account" id="account" value="demo"
+                                            class="form-control"  autocomplete="off">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>密码</th>
+                                    <td>
+                                        <input type="password" style="display:none">
+                                        <!-- Disable input password by browser automatically. -->
+                                        <span class="input-group">
+                                            <input type="password" name="password1" id="password1" value=""
+                                                class="form-control disabled-ie-placeholder"
+                                                placeholder="6位以上，包含大小写字母，数字。"
+                                                autocomplete="off" style="border-radius: 2px 0px 0px 2px;">
+                                            <span class="input-group-addon" id="passwordStrength"
+                                                style="border-radius: 0px 2px 2px 0px; border-right-width: 1px; display: table-cell;"></span>
+                                        </span>
+                                    </td>
+                                    <th>请重复密码</th>
+                                    <td><input type="password" name="password2" id="password2" value=""
+                                            class="form-control" autocomplete="off">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-form">
+                            <caption>联系信息</caption>
+                            <tbody>
+                                <tr>
+                                    <th class="w-90px">手机</th>
+                                    <td><input type="text" name="mobile" id="mobile" value="" class="form-control"
+                                            autocomplete="off">
+                                    </td>
+                                    <th class="w-140px">电话</th>
+                                    <td><input type="text" name="phone" id="phone" value="" class="form-control"
+                                            autocomplete="off">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="w-90px">QQ</th>
+                                    <td><input type="text" name="qq" id="qq" value="" class="form-control"
+                                            autocomplete="off">
+                                    </td>
+                                    <th class="w-140px">钉钉</th>
+                                    <td><input type="text" name="dingding" id="dingding" value="" class="form-control"
+                                            autocomplete="off">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-form">
+                            <caption>安全验证</caption>
+                            <tbody>
+                                <tr>
+                                    <th class="w-90px">您的密码</th>
+                                    <td>
+                                        <div class="required required-wrapper"></div>
+                                        <input type="password" name="verifyPassword" id="verifyPassword" value=""
+                                            class="form-control disabled-ie-placeholder" placeholder="请输入您的系统登录密码"
+                                            autocomplete="off">
+                                    </td>
+                                    <th class="w-140px"></th>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-center form-actions">
+                            <button type="submit" id="submit" class="btn btn-wide btn-primary"
+                                data-loading="稍候...">保存</button>
+                            <a href="./UserList.html" class="btn btn-back btn-wide">返回</a>
+                        </div>
+                    </form>
+                    <input type="hidden" name="verifyRand" id="verifyRand" value="902615038">
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+
+
+</body>
+
+</html>

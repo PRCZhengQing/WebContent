@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>提Bug</title>
+  <script src="./js/jquery-3.4.1.min.js"></script>
+  <script src="./js/EditUser.js"></script>
+  <link rel="stylesheet" href="./css/addbug.css">
+  <link rel="stylesheet" href="./css/header.css">
+</head>
+
+<body>
+
+  <div class="header">
+    <h1 id="BugManager" title="BugManager">BugManager</h1>
+    <div class="nav">
+      <ul>
+        <li><a href="/My.html">我的地盘</a></li>
+        <li><a href="/My.html">测试</a></li>
+      </ul>
+    </div>
+    <div class="user">
+      <span id="userName">魏志航</span>
+      <div id="userDropdown" class="dropdown-content">
+        <a href="./MyProfile.html">个人档案</a>
+        <a href="./Login.html">退出</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bug-form">
+    <div class="mainheader">
+      提Bug
+    </div>
+
+    <div class="form-row">
+      <tr>
+        <th><span class="head-title">所属项目</span></th>
+        <td> <select id="project" name="project">
+            <option value=""></option>
+          </select></td>
+      </tr>
+    </div>
+
+    <div class="form-row">
+      <tr>
+        <th><span class="head-title">所属模块</span></th>
+        <td> <select id="module" name="module">
+            <option value=""></option>
+          </select></td>
+      </tr>
+    </div>
+    <div class="form-row">
+      <tr>
+        <th><span class="head-title">当前指派</span></th>
+        <td> <select id="assignee" name="assignee">
+            <option value=""></option>
+          </select></td>
+        <th><span class="head-title">截止日期</span></th>
+        <td> <input type="datetime-local" id="due-date" name="due-date"></td>
+      </tr>
+
+
+      <!-- 
+  1.所属项目[---下拉框---]   所属模块[-----下拉框----]
+2.当前指派[---下拉框---]   截止日期[-----下拉时间选择框-----]   
+3.Bug类型[---下拉框---]  
+4.Bug标题[------文本框------]  严重程度[-下拉框-] 优先级[-下拉框-]  
+5.
+
+		[----------------
+		-----------------
+重现步骤	-------长文本框---
+		------------------
+		------------------]
+6.附件[添加本地文件按钮]
+ 
+ -->
+    </div>
+
+    <div class="form-row">
+      <tr>
+        <th><span class="head-title">Bug类型</span></th>
+        <td> <select id="bug-type" name="bug-type">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+          </select></td>
+      </tr>
+
+    </div>
+    <div class="form-row">
+      <th><span class="head-title">Bug标题</span></th>
+      <td><input type="text" id="bug-title" name="bug-title"></td>
+      <th><span class="head-title">严重程度</span></th>
+      <td><select id="severity" name="severity">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select></td>
+      <th><span class="head-title">优先级</span></th>
+      <td> <select id="priority" name="priority">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select></td>
+    </div>
+
+
+
+
+
+    <div class="form-row">
+      <th><span class="head-title">重现步骤</span></th>
+      <td><textarea id="steps" name="steps"></textarea></td>
+    </div>
+
+    <div class="form-row">
+      <tr>
+        <th> <span class="head-title">附件</span></th>
+        <td><input type="file" id="attachment" name="attachment"></td>
+      </tr>
+
+    </div>
+    <div class="foot-btn">
+      <button type="submit" class="submit-btn">提交</button>
+      <input type="button" class="btn" onclick='location.href=("./BugList.html")' value="返回"></button>
+    </div>
+  </div>
+</body>
+
+</html>

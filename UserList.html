@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户列表</title>
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/userlist.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1 id="BugManager" title="BugManager">BugManager</h1>
+        <div class="nav">
+            <ul>
+                <li><a href="/My.html">我的地盘</a></li>
+            </ul>
+        </div>
+        <div class="user">
+            <span id="userName">魏志航</span>
+            <div id="userDropdown" class="dropdown-content">
+                <a href="./MyProfile.html">个人档案</a>
+                <a href="./Login.html">退出</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="MainBody">
+        <!-- 搜索框 -->
+        <div class="searchlist">
+            <div class="dropdown" style="margin-left:50px; width:120px;">
+                <p>角色:</p>
+                <select class="RoleId" style="width:80px; ">
+                    <option value="0">所有</option>
+                    <option value="1">用户</option>
+                    <option value="2">管理员</option>
+                </select>
+            </div>
+            <div class="dropdown" style="width:120px; ">
+                <p>姓名:</p>
+                <input class="userName" style="width:100px; " type="text">
+            </div>
+            <div class="searchbutton" style="width:120px; ">
+                <input style="width:80px; " type="button" name="" id="show" value="搜索">
+            </div>
+            <div class="searchbutton addUser" style="width:120px;">
+                <input type="button" name="" id="goAddUser" value="新增用户">
+            </div>
+        </div>
+        <!-- 表格 -->
+        <table class="formclass">
+            <thead class="thead">
+                <tr>
+                    <th>Email</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Date Of Birth</th>
+                    <th>Phone</th>
+                    <th>Role</th>
+                    <th>Operate</th>
+                </tr>
+            </thead>
+            <tbody class="resultList">
+                <tr class="tdcolor">
+                    <td>behappy@vip.sina.com</td>
+                    <td>Mag Lydia</td>
+                    <td>Male</td>
+                    <td>1988-06-06</td>
+                    <td>13087666556</td>
+                    <td>Office User</td>
+                    <td><input class="editUser" style="width: 80px;  font-size: 16px;" type="button" value="编辑"></td>
+                </tr>
+                <tr class="tdcolor1">
+                    <td>behappy@vip.sina.com</td>
+                    <td>Mag Lydia</td>
+                    <td>Male</td>
+                    <td>1988-06-06</td>
+                    <td>13087666556</td>
+                    <td>Office User</td>
+                    <td><input class="editUser" style="width: 80px;  font-size: 16px;" type="button" value="编辑"></td>
+                </tr>
+                <tr class="tdcolor">
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+                <tr class="tdcolor1">
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+
+            </tbody>
+
+
+
+
+        </table>
+        <!-- 列表 -->
+        <div class="pagemsg"> 
+            <div class="pageicon">
+                <div class="prev step-backward">
+                    <i class="fa fa-step-backward" aria-hidden="true">
+                        <img src="./image/icon/firstpage.svg">
+                    </i>
+                </div>
+                <div class="prev chevron-left">
+                    <i class="fa fa-chevron-left" aria-hidden="true">
+                        <img src="./image/icon/lastpage.svg">
+                    </i>
+                </div>
+                <div class="NUM">
+                    <select class="pages pageSelect" style="width:80px; ">
+                        <option value="volvo">1</option>
+                    </select>    
+                </div>
+                <div class="prev chevron-right">
+                    <i class="fa fa-chevron-right" aria-hidden="true">
+                        <img src="./image/icon/nextpage.svg">
+                    </i>
+                </div>
+                <div class="prev step-forward">
+                    <i class="fa fa-step-forward" aria-hidden="true">
+                        <img src="./image/icon/endpage.svg">
+                    </i>
+                </div>
+            </div>
+            <div class="totalpage">
+                <span>
+                    Total Pages：
+                </span>
+                <span class="pages pageNum">
+                    10
+                </span>
+                <span>
+                    Total Records:
+                </span>
+                <span class="totals">
+                    200
+                </span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

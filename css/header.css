@@ -1,0 +1,506 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-attachment: scroll;
+    /* 背景滚动方式为滚动 */
+    background-clip: border-box;
+    /* 背景裁剪为边框框盒 */
+    background-color: rgb(17, 131, 251);
+    /* 背景颜色为RGB(17, 131, 251) */
+    background-image: linear-gradient(-90deg, rgb(10, 72, 209) 0px, rgb(17, 131, 251) 100%);
+    /* 背景图像为线性渐变，从RGB(10, 72, 209)到RGB(17, 131, 251)，方向为从上到下 */
+    padding: 10px;
+    border-bottom-color: rgb(233, 242, 251);
+    /* 底部边框颜色为RGB(233, 242, 251) */
+    border-top-color: rgb(12, 100, 235);
+    /* 顶部边框颜色为RGB(12, 100, 235) */
+    color: rgb(255, 255, 255);
+    /* 文本颜色为RGB(255, 255, 255) */
+    height: 30px;
+    /* 元素高度为50像素 */
+    background-position-x: 0%;
+    /* 背景水平位置为0% */
+    background-position-y: 0%;
+    /* 背景垂直位置为0% */
+    line-height: 18.5714px;
+    /* 行高为18.5714像素 */
+
+    text-size-adjust: 100%;
+    /* 文本大小调整为100% */
+    font-size: 13px;
+    /* 字体大小为13像素 */
+    background-repeat: repeat;
+    /* 背景平铺方式为重复 */
+    background-size: auto;
+    /* 背景尺寸为自动适应 */
+    background-origin: padding-box;
+    /* 背景位置起点为内边距框盒 */
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* WebKit点击高亮颜色为RGBA(0, 0, 0, 0) */
+}
+
+.header h1 {
+    background-attachment: scroll;
+    /* 背景滚动方式为滚动 */
+    background-clip: border-box;
+    /* 背景裁剪为边框框盒 */
+    background-color: rgba(0, 0, 0, 0);
+    /* 背景颜色为RGBA(0, 0, 0, 0) */
+    background-image: none;
+    /* 没有背景图像 */
+    background-origin: padding-box;
+    /* 背景位置起点为内边距框盒 */
+    background-position-x: 0px;
+    /* 背景水平位置为0像素 */
+    background-position-y: 0px;
+    /* 背景垂直位置为0像素 */
+    background-repeat: repeat;
+    /* 背景平铺方式为重复 */
+    background-size: auto;
+    /* 背景尺寸为自动适应 */
+
+    box-sizing: border-box;
+    /* 盒模型为边框框盒 */
+    color: rgb(255, 255, 255);
+    /* 文本颜色为RGB(255, 255, 255) */
+    cursor: pointer;
+    /* 光标样式为指针 */
+    display: inline;
+    /* 元素以行内方式显示 */
+    font-size: 25px;
+    /* 字体大小为20像素 */
+    font-weight: 400;
+    /* 字体粗细为400 */
+    height: auto;
+    /* 元素高度为自适应 */
+    line-height: 30px;
+    /* 行高为30像素 */
+    text-decoration-color: rgb(255, 255, 255);
+    /* 文本装饰线颜色为RGB(255, 255, 255) */
+    text-decoration-line: none;
+    /* 没有文本装饰线 */
+    text-decoration-style: solid;
+    /* 文本装饰线样式为实线 */
+    text-decoration-thickness: auto;
+    /* 文本装饰线厚度为自适应 */
+    text-size-adjust: 100%;
+    /* 文本大小调整为100% */
+    text-wrap: nowrap;
+    /* 文本不换行 */
+    transition-behavior: normal;
+    /* 过渡效果为正常 */
+    transition-delay: 0s;
+    /* 过渡延迟为0秒 */
+    transition-duration: 0.4s;
+    /* 过渡持续时间为0.4秒 */
+    transition-property: color, background, transform, opacity, left, top, right, bottom, -webkit-transform, -o-transform;
+    /* 过渡属性为颜色、背景、变换、透明度、左、上、右、下、-webkit-transform和-o-transform */
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    /* 过渡时间函数为cubic-bezier(0.175, 0.885, 0.32, 1) */
+    white-space-collapse: collapse;
+    /* 空白折叠为折叠状态 */
+    width: auto;
+    /* 元素宽度为自适应 */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* WebKit点击高亮颜色为RGBA(0, 0, 0, 0) */
+}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.nav ul li a {
+    /* text-decoration: none;
+    font-weight: 700;    
+   
+    opacity: 1; */
+    background-attachment: scroll;
+    /* 背景滚动方式为滚动 */
+    background-clip: border-box;
+    /* 背景裁剪为边框框盒 */
+    background-color: rgba(0, 0, 0, 0);
+    /* 背景颜色为透明黑色 */
+    background-image: none;
+    /* 没有背景图像 */
+    background-origin: padding-box;
+    /* 背景位置起点为内边距框盒 */
+    background-position-x: 0px;
+    /* 背景水平位置为0像素 */
+    background-position-y: 0px;
+    /* 背景垂直位置为0像素 */
+    background-repeat: repeat;
+    /* 背景平铺方式为重复 */
+    background-size: auto;
+    /* 背景尺寸为自动适应 */
+
+    border-bottom-left-radius: 0px;
+    /* 底部左边框圆角半径为0像素 */
+    border-bottom-right-radius: 0px;
+    /* 底部右边框圆角半径为0像素 */
+    border-top-left-radius: 0px;
+    /* 顶部左边框圆角半径为0像素 */
+    border-top-right-radius: 0px;
+    /* 顶部右边框圆角半径为0像素 */
+
+    box-sizing: border-box;
+    /* 盒模型为边框框盒模型 */
+
+    color: rgb(255, 255, 255);
+    /* 文本颜色为白色 */
+
+    cursor: pointer;
+    /* 鼠标指针样式为指针形状 */
+
+    display: block;
+    /* 元素以块级方式显示 */
+
+    font-size: 15px;
+    /* 字体大小为15像素 */
+
+    height: 50px;
+    /* 元素高度为50像素 */
+
+    line-height: 30px;
+    /* 行高为30像素 */
+
+    list-style-image: none;
+    /* 列表项无标记图像 */
+
+    list-style-position: outside;
+    /* 列表项标记位于外部 */
+
+    list-style-type: none;
+    /* 列表项无标记类型 */
+
+    opacity: 0.9;
+    /* 元素不透明度为0.9 */
+    padding-bottom: 10px;
+    /* 内边距底部为10像素 */
+    padding-left: 10px;
+    /* 内边距左侧为10像素 */
+    padding-right: 10px;
+    /* 内边距右侧为10像素 */
+    padding-top: 10px;
+    /* 内边距顶部为10像素 */
+
+    position: relative;
+    /* 元素相对定位 */
+
+    text-align: center;
+    /* 文本居中对齐 */
+
+    text-decoration-color: rgb(255, 255, 255);
+    /* 文本装饰颜色为白色 */
+    text-decoration-line: none;
+    /* 文本无装饰线 */
+    text-decoration-style: solid;
+    /* 文本装饰样式为实线 */
+    text-decoration-thickness: auto;
+    /* 文本装饰线粗细为自动 */
+
+    text-size-adjust: 100%;
+    /* 文本大小调整为100% */
+
+    transition-behavior: normal;
+    /* 过渡行为为正常 */
+    transition-delay: 0s;
+    /* 过渡延迟为0秒 */
+    transition-duration: 0.4s;
+    /* 过渡持续时间为0.4秒 */
+    transition-property: color, background, transform, opacity, left, top, right, bottom, -webkit-transform, -o-transform;
+    /* 过渡属性为颜色、背景、变换、不透明度、左侧、顶部、右侧、底部、-webkit-transform、-o-transform */
+
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    /* 过渡时间函数为cubic-bezier(0.175, 0.885, 0.32, 1) */
+
+    width: 80px;
+    /* 元素宽度为50像素 */
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* WebKit浏览器中的触摸高亮颜色为透明黑色 */
+    /* background-color: rgba(0, 0, 0, 0.1); */
+}
+
+.user {
+    position: relative;
+    padding: 2px 6px;
+    margin-left: 3px;
+    line-height: 20px;
+    color: #fff;
+    opacity: .9;
+    margin-right: 50px;
+    font-size: 15px;
+}
+
+
+
+.dropdown-content {
+    display: none;
+    /* position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    left: -20px; */
+    background-clip: padding-box;
+    /* 背景裁剪为内边距框盒 */
+    background-color: rgb(255, 255, 255);
+    /* 背景颜色为RGB(255, 255, 255) */
+
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+    /* 底部边框颜色为RGBA(0, 0, 0, 0.1) */
+    border-bottom-left-radius: 4px;
+    /* 底部左侧边框圆角为4像素 */
+    border-bottom-right-radius: 4px;
+    /* 底部右侧边框圆角为4像素 */
+    border-bottom-style: solid;
+    /* 底部边框样式为实线 */
+    border-bottom-width: 0.666667px;
+    /* 底部边框宽度为0.666667像素 */
+
+    border-image-outset: 0;
+    /* 边框图像外延为0 */
+    border-image-repeat: stretch;
+    /* 边框图像平铺方式为拉伸 */
+    border-image-slice: 100%;
+    /* 边框图像切割为100% */
+    border-image-source: none;
+    /* 边框图像来源为无 */
+    border-image-width: 1;
+    /* 边框图像宽度为1 */
+
+    border-left-color: rgba(0, 0, 0, 0.1);
+    /* 左侧边框颜色为RGBA(0, 0, 0, 0.1) */
+    border-left-style: solid;
+    /* 左侧边框样式为实线 */
+    border-left-width: 0.666667px;
+    /* 左侧边框宽度为0.666667像素 */
+
+    border-right-color: rgba(0, 0, 0, 0.1);
+    /* 右侧边框颜色为RGBA(0, 0, 0, 0.1) */
+    border-right-style: solid;
+    /* 右侧边框样式为实线 */
+    border-right-width: 0.666667px;
+    /* 右侧边框宽度为0.666667像素 */
+
+    border-top-color: rgba(0, 0, 0, 0.1);
+    /* 顶部边框颜色为RGBA(0, 0, 0, 0.1) */
+    border-top-left-radius: 4px;
+    /* 顶部左侧边框圆角为4像素 */
+    border-top-right-radius: 4px;
+    /* 顶部右侧边框圆角为4像素 */
+    border-top-style: solid;
+    /* 顶部边框样式为实线 */
+    border-top-width: 0.666667px;
+    /* 顶部边框宽度为0.666667像素 */
+
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 12px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px;
+    /* 盒阴影为两个投影效果组成 */
+    box-sizing: border-box;
+    /* 盒模型为边框框盒 */
+
+    color: rgb(255, 255, 255);
+    /* 文本颜色为RGB(255, 255, 255) */
+
+
+    float: none;
+    /* 不浮动 */
+
+    font-size: 13px;
+    /* 字体大小为13像素 */
+
+    height: auto;
+    /* 元素高度为349.823像素 */
+
+    left: -35px;
+    /* 元素左侧位置为-65像素 */
+
+    line-height: 20px;
+    /* 行高为18.5714像素 */
+
+    list-style-image: none;
+    /* 列表项样式图像为无 */
+    list-style-position: outside;
+    /* 列表项样式位置为外部 */
+    list-style-type: none;
+    /* 列表项样式类型为无 */
+
+    margin-block-end: 0px;
+    /* 垂直方向末端外边距为0像素 */
+    margin-block-start: 0px;
+    /* 垂直方向起始外边距为2像素 */
+    margin-bottom: 0px;
+    /* 底部外边距为0像素 */
+    margin-inline-end: 0px;
+    /* 水平方向末端内边距为0像素 */
+    margin-inline-start: 0px;
+    /* 水平方向起始内边距为0像素 */
+    margin-left: 0px;
+    /* 左侧外边距为0像素 */
+    margin-right: 0px;
+    /* 右侧外边距为0像素 */
+    margin-top: -3px;
+    /* 顶部外边距为2像素 */
+
+    min-width: 120px;
+    /* 最小宽度为150像素 */
+
+    opacity: 1;
+    /* 不透明度为1 */
+
+    padding-bottom: 5px;
+    /* 底部内边距为5像素 */
+    padding-inline-start: 0px;
+    /* 水平方向起始内边距为0像素 */
+    padding-left: 0px;
+    /* 左侧内边距为0像素 */
+    padding-right: 0px;
+    /* 右侧内边距为0像素 */
+    padding-top: 5px;
+    /* 顶部内边距为5像素 */
+
+    position: absolute;
+    /* 定位方式为绝对定位 */
+    right: 0px;
+    /* 元素右侧位置为0像素 */
+    text-align: left;
+    /* 文本对齐方式为左对齐 */
+    text-size-adjust: 100%;
+    /* 文本大小调整为100% */
+
+    top: 24.8854px;
+    /* 元素顶部位置为24.8854像素 */
+
+    z-index: 1;
+    /* 元素层级为1000 */
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* Webkit浏览器点击高亮颜色为RGBA(0, 0, 0, 0) */
+
+}
+
+.dropdown-content a {
+    /* color: black;
+    padding: 12px 8px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap; */
+
+    background-attachment: scroll;
+    /* 背景滚动方式为滚动 */
+    background-clip: border-box;
+    /* 背景裁剪为边框框盒 */
+    background-color: rgba(0, 0, 0, 0);
+    /* 背景颜色为RGBA(0, 0, 0, 0) */
+    background-image: none;
+    /* 背景图像为无 */
+    background-origin: padding-box;
+    /* 背景起源为内边距框盒 */
+    background-position-x: 0px;
+    /* 背景X轴位置为0像素 */
+    background-position-y: 50%;
+    /* 背景Y轴位置为50% */
+    background-repeat: repeat;
+    /* 背景平铺方式为重复 */
+    background-size: auto;
+    /* 背景大小为自动 */
+
+    border-bottom-left-radius: 3px;
+    /* 底部左侧边框圆角为3像素 */
+    border-bottom-right-radius: 3px;
+    /* 底部右侧边框圆角为3像素 */
+    border-top-left-radius: 3px;
+    /* 顶部左侧边框圆角为3像素 */
+    border-top-right-radius: 3px;
+    /* 顶部右侧边框圆角为3像素 */
+
+    box-sizing: border-box;
+    /* 盒模型为边框框盒 */
+
+    clear: both;
+    /* 清除浮动 */
+
+    color: rgb(60, 67, 83);
+    /* 文本颜色为RGB(60, 67, 83) */
+
+
+    display: block;
+    /* 元素以块级方式显示 */
+
+    font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Source Han Sans CN", "Source Han Sans", "Source Han Serif", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei", sans-serif;
+    /* 字体族为"Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Source Han Sans CN", "Source Han Sans", "Source Han Serif", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei", sans-serif */
+    font-size: 13px;
+    /* 字体大小为13像素 */
+    font-weight: 400;
+    /* 字体粗细为400 */
+
+    height: 25px;
+    /* 元素高度为22.5625像素 */
+
+    line-height: 18.5714px;
+    /* 行高为18.5714像素 */
+
+    list-style-image: none;
+    /* 列表项样式图像为无 */
+    list-style-position: outside;
+    /* 列表项样式位置为外部 */
+    list-style-type: none;
+    /* 列表项样式类型为无 */
+
+    margin-bottom: 5px;
+    /* 底部外边距为5像素 */
+    margin-left: 0px;
+    /* 左侧外边距为0像素 */
+    margin-right: 0px;
+    /* 右侧外边距为0像素 */
+    margin-top: 5px;
+    /* 顶部外边距为5像素 */
+
+    padding-bottom: 2px;
+    /* 底部内边距为2像素 */
+    padding-left: 10px;
+    /* 左侧内边距为10像素 */
+    padding-right: 10px;
+    /* 右侧内边距为10像素 */
+    padding-top: 2px;
+    /* 顶部内边距为2像素 */
+
+    text-align: left;
+    /* 文本对齐方式为左对齐 */
+    text-decoration-color: rgb(60, 67, 83);
+    /* 文本装饰颜色为RGB(60, 67, 83) */
+    text-decoration-line: none;
+    /* 文本装饰线为无 */
+    text-decoration-style: solid;
+    /* 文本装饰样式为实线 */
+    text-decoration-thickness: auto;
+    /* 文本装饰厚度为自动 */
+    text-size-adjust: 100%;
+    /* 文本大小调整为100% */
+    text-wrap: nowrap;
+    /* 文本换行方式为不换行 */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* -webkit-tap-highlight-color为RGBA(0, 0, 0, 0) */
+}
+
+.user:hover .dropdown-content {
+    display: block;
+}
