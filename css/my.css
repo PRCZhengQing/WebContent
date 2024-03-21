@@ -1,0 +1,182 @@
+.formclass {
+
+    background-color: #fff;
+    word-break: break-all;
+    border-collapse: collapse;
+    /* 边框合并方式为合并 */
+    box-sizing: border-box;
+    /* 盒模型为边框框盒 */
+    display: table;
+    /* 元素以表格方式显示 */
+    margin-bottom: 0px;
+    /* 底部外边距为0像素 */
+    /* margin-left: 98.5px;  */
+    /* 左侧外边距为98.5像素 */
+    margin-right: 60px;
+    /* 右侧外边距为98.5像素 */
+    margin-top: 0px;
+    /* 顶部外边距为0像素 */
+    padding-bottom: 0px;
+    /* 底部内边距为0像素 */
+    padding-left: 0px;
+    /* 左侧内边距为0像素 */
+    padding-right: 0px;
+    /* 右侧内边距为0像素 */
+    padding-top: 0px;
+    /* 顶部内边距为0像素 */
+    text-indent: 0px;
+    /* 文本缩进为0像素 */
+    /* 元素宽度为1080像素 */
+    -webkit-border-horizontal-spacing: 2px;
+    /* -webkit-border-horizontal-spacing为2像素 */
+    -webkit-border-vertical-spacing: 2px;
+    table-layout: fixed;
+    /* -webkit-border-vertical-spacing为2像素 */
+
+
+
+}
+
+/* 表头 */
+.thead {
+
+
+
+    display: table-header-group;
+    border-color: inherit;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /* 背景颜色为RGB(25, 106, 166) */
+
+    font-weight: 700;
+    /* 元素以表头组方式显示 */
+    height: 31px;
+    /* 元素高度为31像素 */
+    margin-bottom: 0px;
+    /* 底部外边距为0像素 */
+    margin-left: 0px;
+    /* 左侧外边距为0像素 */
+    margin-right: 0px;
+    /* 右侧外边距为0像素 */
+    margin-top: 0px;
+    /* 顶部外边距为0像素 */
+    padding-bottom: 0px;
+    /* 底部内边距为0像素 */
+    padding-left: 0px;
+    /* 左侧内边距为0像素 */
+    padding-right: 0px;
+    /* 右侧内边距为0像素 */
+    padding-top: 0px;
+    /* 顶部内边距为0像素 */
+    text-indent: 0px;
+    /* 文本缩进为0像素 */
+    vertical-align: middle;
+    /* 垂直对齐方式为居中 */
+    -webkit-border-horizontal-spacing: 2px;
+    /* -webkit-border-horizontal-spacing为2像素 */
+    -webkit-border-vertical-spacing: 2px;
+    /* -webkit-border-vertical-spacing为2像素 */
+
+
+}
+
+.tdcolor {
+
+
+    text-align: left;
+    background-color: rgb(238, 238, 238);
+    /* 背景颜色为RGB(173, 216, 230) */
+    border-bottom-color: rgb(128, 128, 128);
+    /* 底部边框颜色为RGB(128, 128, 128) */
+    border-collapse: collapse;
+    /* 边框合并方式为合并 */
+    border-left-color: rgb(128, 128, 128);
+    /* 左侧边框颜色为RGB(128, 128, 128) */
+    border-right-color: rgb(128, 128, 128);
+    /* 右侧边框颜色为RGB(128, 128, 128) */
+    border-top-color: rgb(128, 128, 128);
+    /* 顶部边框颜色为RGB(128, 128, 128) */
+    display: table-row;
+    /* 元素以表格行方式显示 */
+
+    padding-bottom: 2px;
+    /* 底部内边距为0像素 */
+    padding-left: 8px;
+    /* 左侧内边距为0像素 */
+    padding-right: 8px;
+    /* 右侧内边距为0像素 */
+    padding-top: 2px;
+    /* 顶部内边距为0像素 */
+    text-indent: 0px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    min-width: 20px;
+    min-height: 36px;
+    /* 文本缩进为0像素 */
+    vertical-align: middle;
+    /* 垂直对齐方式为居中 */
+    -webkit-border-horizontal-spacing: 2px;
+    /* -webkit-border-horizontal-spacing为2像素 */
+    -webkit-border-vertical-spacing: 2px;
+    /* -webkit-border-vertical-spacing为2像素 */
+}
+
+.tdcolor1 {
+    text-align: left;
+    /* 背景颜色为RGB(173, 216, 230) */
+    border-bottom-color: rgb(128, 128, 128);
+    /* 底部边框颜色为RGB(128, 128, 128) */
+    border-collapse: collapse;
+    /* 边框合并方式为合并 */
+    border-left-color: rgb(128, 128, 128);
+    /* 左侧边框颜色为RGB(128, 128, 128) */
+    border-right-color: rgb(128, 128, 128);
+    /* 右侧边框颜色为RGB(128, 128, 128) */
+    border-top-color: rgb(128, 128, 128);
+    /* 顶部边框颜色为RGB(128, 128, 128) */
+    display: table-row;
+    /* 元素以表格行方式显示 */
+    margin-bottom: 0px;
+    /* 底部外边距为0像素 */
+    margin-left: 0px;
+    /* 左侧外边距为0像素 */
+    margin-right: 0px;
+    /* 右侧外边距为0像素 */
+    margin-top: 0px;
+    /* 顶部外边距为0像素 */
+    padding-bottom: 0px;
+    /* 底部内边距为0像素 */
+    padding-left: 0px;
+    /* 左侧内边距为0像素 */
+    padding-right: 0px;
+    /* 右侧内边距为0像素 */
+    padding-top: 0px;
+    /* 顶部内边距为0像素 */
+    text-indent: 0px;
+    /* 文本缩进为0像素 */
+    vertical-align: middle;
+    /* 垂直对齐方式为居中 */
+    -webkit-border-horizontal-spacing: 2px;
+    /* -webkit-border-horizontal-spacing为2像素 */
+    -webkit-border-vertical-spacing: 2px;
+    /* -webkit-border-vertical-spacing为2像素 */
+
+}
+
+.resultList td {
+
+    padding-bottom: 2px;
+    /* 底部内边距为0像素 */
+    padding-left: 8px;
+    /* 左侧内边距为0像素 */
+    padding-right: 8px;
+    /* 右侧内边距为0像素 */
+    padding-top: 2px;
+    /* 顶部内边距为0像素 */
+    text-indent: 0px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    white-space: nowrap;
+}
