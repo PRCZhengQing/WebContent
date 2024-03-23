@@ -10,20 +10,21 @@ $(document).ready(function(){
     } catch (error) {
         
     }
-    $(".loginbutton").click(function(){
-        var email=$(".email").val();
-        var password=$(".password").val();
-        var param="email="+email+"&password="+password;
+    $("#login-btn").click(function(){
+        var EmployeeID=$("#EmployeeID").val();
+        var Password=$("#password").val();
+        var hashedPassword = CryptoJS.SHA256(Password).toString();
+        var param="EmployeeID="+EmployeeID+"&Password="+hashedPassword;
         console.log(param)
         $.ajax({
-            url:"http://localhost:8080/SunshineAirlines/login",
+            url:"http://localhost:8080/BugManager/loginn",
             data:param,
             type:"post",
             success:function(msg){
-                var obj=JSON.parse(msg);
+                var obj=msg;
                 if(obj.flag=="success"){
                     var user=obj.data;
-                    if($(".remember").is(":checked")){
+                    if($("#remember").is(":checked")){
                         user.loginDate=new Date();
                     }
                     localStorage.setItem("user",JSON.stringify(user));
