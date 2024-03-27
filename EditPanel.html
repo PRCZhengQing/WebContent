@@ -12,22 +12,41 @@
 </head>
 
 <body>
-    <div class="header">
-        <h1 id="BugManager" title="BugManager">BugManager</h1>
-        <div class="nav">
-          <ul>
-            <li><a href="./My.html">我的地盘</a></li>
-            <li><a href="./BugList.html">Bug</a></li>
-          </ul>
-        </div>
-        <div class="user">
-          <span id="userName">魏志航</span>
-          <div id="userDropdown" class="dropdown-content">
+  <div class="header">
+    <h1 id="BugManager" title="BugManager">BugManager</h1>
+    <div class="nav">
+        <ul>
+            <li><a href="/My.html">我的地盘</a></li>
+            <li><a href="/BugList.html">Bug</a></li>
+        </ul>
+    </div>
+    <div class="user">
+        <span id="userName">魏志航</span>
+        <div id="userDropdown" class="dropdown-content">
             <a href="./MyProfile.html">个人档案</a>
-            <a href="./Login.html">退出</a>
-          </div>
+            <a onclick="out()"> 退出</a>
         </div>
-      </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        // 检查是否存在保存的用户信息
+        var user = JSON.parse(localStorage.getItem("user"));
+        if (!user) {
+            // 如果没有保存的用户信息，跳转到Login.html
+            window.location.href = "Login.html";
+            return;
+        }
+        user = user[0];
+        $("#userName").text(user.Username);
+
+    })
+
+    function out() {
+        localStorage.removeItem("user");
+        location.href = "Login.html";
+    }
+</script>
 
       <div class="content-container">
         <div id="list-container">

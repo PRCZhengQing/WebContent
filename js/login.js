@@ -14,7 +14,7 @@ $(document).ready(function(){
         var EmployeeID=$("#EmployeeID").val();
         var Password=$("#password").val();
         var hashedPassword = CryptoJS.SHA256(Password).toString();
-        var param="EmployeeID="+EmployeeID+"&Password="+hashedPassword;
+        var param="employeeId="+EmployeeID+"&passWord="+hashedPassword;
         console.log(param)
         $.ajax({
             url:"http://localhost:8080/BugManager/loginn",
