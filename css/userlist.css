@@ -247,6 +247,7 @@ table {
     box-sizing: border-box;
     color: #FFF;
     background-color: #16A8F8;
+    cursor: pointer;
 }
 
 /* 翻页 */

@@ -37,5 +37,7 @@ $(document).ready(function(){
     })
 })
 function jump(user){
+    
  location.href="My.html"
+
 }
