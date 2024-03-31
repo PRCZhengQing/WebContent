@@ -1,62 +1,62 @@
-
-
 body {
-  color: #3c4353;
-  padding-bottom: 40px;
-  background-color: #efefef;
-  font-size: 13px;
+	color: #3c4353;
+	padding-bottom: 40px;
+	background-color: #efefef;
+	font-size: 13px;
 }
 
 .bug-form {
-  width: 95%;
-  margin: auto;
-  margin-top: 60px;
-  background-color: white;
-  border-radius: 4px;
+	width: 95%;
+	margin: auto;
+	margin-top: 60px;
+	background-color: white;
+	border-radius: 4px;
 }
-.mainheader{
-  padding: 5px 20px;
-  border-bottom: 1px solid #eee;
 
-  
-  color:rgb(60, 67, 83);
-display:block;
-font-size :20.21px;
-font-weight :700;
-margin-block-end:15.21px;
-margin-block-start:20.21px;
+.mainheader {
+	padding: 5px 20px;
+	border-bottom: 1px solid #eee;
+
+
+	color: rgb(60, 67, 83);
+	display: block;
+	font-size: 20.21px;
+	font-weight: 700;
+	margin-block-end: 15.21px;
+	margin-block-start: 20.21px;
 }
+
 .form-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 10px;
-  border-radius: 0px 2px 2px 0px;
-  /* margin: auto; */
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 10px;
+	border-radius: 0px 2px 2px 0px;
+	/* margin: auto; */
 
 }
 
 .head-title {
-  margin-right: 10px;
-  white-space: nowrap;
-  text-align: right;
-  min-width: 100px;
-  font-weight: 700;
+	margin-right: 10px;
+	white-space: nowrap;
+	text-align: right;
+	min-width: 100px;
+	font-weight: 700;
 
-  padding: 7px;
+	padding: 7px;
 }
 
 .form-row label {
-  margin-right: 10px;
+	margin-right: 10px;
 }
 
 .form-row select,
 .form-row input[type="datetime-local"],
 .form-row textarea {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+	flex: 1;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
 
 
 }
@@ -65,100 +65,101 @@ margin-block-start:20.21px;
 
 /* Bug标题 */
 #bug-title {
-  width: 70%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+	width: 70%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
 }
 
 .form-row select {
-  margin-top: 5px;
-  width: auto;
-  margin-right: 5px;
+	margin-top: 5px;
+	width: auto;
+	margin-right: 5px;
 }
 
 #bug-title {
-  margin-right: 5px;
+	margin-right: 5px;
 }
 
 .form-row input[type="datetime-local"] {
-  margin-top: 5px;
-  width: auto;
+	margin-top: 5px;
+	width: auto;
 }
 
 .form-row textarea {
-  height: 200px;
-  width: auto;
+	height: 200px;
+	width: auto;
 }
 
 /* 提交文本 */
 
 input[type="file"] {
-  color: #3c495c;
-  text-shadow: none;
-  background: 0;
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 18px;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: 4px;
+	color: #3c495c;
+	text-shadow: none;
+	background: 0;
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 18px;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 4px;
 }
 
 
 button {
-  min-width: 120px;
-  padding: 5px 20px;
-  color: #fff;
-  background-color: #0c64eb;
-  border-color: transparent;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 18px;
-  text-align: center;
-  white-space: nowrap;
+	min-width: 120px;
+	padding: 5px 20px;
+	color: #fff;
+	background-color: #0c64eb;
+	border-color: transparent;
+	padding: 6px 12px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 18px;
+	text-align: center;
+	white-space: nowrap;
 }
 
 .btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 18px;
-  text-align: center;
-  white-space: nowrap;
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 18px;
+	text-align: center;
+	white-space: nowrap;
 
-  min-width: 120px;
+	min-width: 120px;
 
-  color: #3c4353;
-  background-color: #fff;
+	color: #3c4353;
+	background-color: #fff;
 
 
-  cursor: pointer;
+	cursor: pointer;
 
-  user-select: none;
-  border: 1px solid #d6dae3;
-  border-radius: 4px;
-  /* padding: 5px 20px;
+	user-select: none;
+	border: 1px solid #d6dae3;
+	border-radius: 4px;
+	/* padding: 5px 20px;
     background-color: #fff;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer; */
 }
+
 .foot-btn {
-  margin: auto;
-  text-align: center;
-  padding-bottom: 30px;
+	margin: auto;
+	text-align: center;
+	padding-bottom: 30px;
 }

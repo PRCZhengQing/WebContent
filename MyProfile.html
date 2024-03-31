@@ -1,72 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/myprofile.css">
-    <script src="./js/jquery-3.4.1.min.js"></script>
-    <script src="./js/myprofile.js"></script>
-    <title>个人档案</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/header.css">
+	<link rel="stylesheet" href="./css/myprofile.css">
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./js/myprofile.js"></script>
+	<title>个人档案</title>
 </head>
+
 <body>
 
-    <div class="header">
-        <h1 id="BugManager" title="BugManager">BugManager</h1>
-        <div class="nav">
-            <ul>
-                <li><a href="./My.html">我的地盘</a></li>
-                <li><a href="./BugList.html">Bug</a></li>
-            </ul>
-        </div>
-        <div class="user">
-            <span id="userName">魏志航</span>
-            <div id="userDropdown" class="dropdown-content">
-                <a href="./MyProfile.html">个人档案</a>
-                <a onclick="out()"> 退出</a>
-            </div>
-        </div>
-    </div>
-<script>
-    $(document).ready(function () {
-        // 检查是否存在保存的用户信息
-        var user = JSON.parse(localStorage.getItem("user"));
-        if (!user) {
-            // 如果没有保存的用户信息，跳转到Login.html
-            window.location.href = "Login.html";
-            return;
-        }
-        user = user[0];
-        $("#userName").text(user.Username);
+	<div class="header">
+		<h1 id="BugManager" title="BugManager">BugManager</h1>
+		<div class="nav">
+			<ul>
+				<li><a href="./My.html">我的地盘</a></li>
+				<li><a href="./BugList.html">Bug</a></li>
+			</ul>
+		</div>
+		<div class="user">
+			<span id="userName">魏志航</span>
+			<div id="userDropdown" class="dropdown-content">
+				<a href="./MyProfile.html">个人档案</a>
+				<a onclick="out()"> 退出</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function () {
+			// 检查是否存在保存的用户信息
+			var user = JSON.parse(localStorage.getItem("user"));
+			if (!user) {
+				// 如果没有保存的用户信息，跳转到Login.html
+				window.location.href = "Login.html";
+				return;
+			}
+			user = user[0];
+			$("#userName").text(user.Username);
 
-    })
+		})
 
-    function out() {
-        localStorage.removeItem("user");
-        location.href = "Login.html";
-    }
-</script>
+		function out() {
+			localStorage.removeItem("user");
+			location.href = "Login.html";
+		}
+	</script>
 
-    <div class="profile-container">
-        <div class="profile-header"><h4>基本资料</h4><input type="button" value="修改档案" id="edit-btn"/> </div>
-        <div class="profile-entry"><span class="label">用户名:</span> <span class="value" id="username">Username123</span></div>
-        <div class="profile-entry"><span class="label">真实姓名:</span> <span class="value" id="real-name">张三</span></div>
-        <div class="profile-entry"><span class="label">性别:</span> <span class="value" id="gender">男</span></div>
-        <div class="profile-entry"><span class="label">生日:</span> <span class="value" id="birthday">男</span></div>
-        <div class="profile-entry"><span class="label">所属部门:</span> <span class="value" id="department">技术部</span></div>
-        <div class="profile-entry"><span class="label">工号:</span> <span class="value" id="employeeId">UT99888</span></div>
-        <div class="profile-entry"><span class="label">职位:</span> <span class="value" id="position">前端开发工程师</span></div>
-        <div class="profile-entry"><span class="label">入职日期:</span> <span class="value" id="start-date">2023-04-27</span></div>
-        <div class="profile-entry"><span class="label">邮箱:</span> <span class="value" id="email">email@example.com</span></div>
-        <div class="profile-entry"><span class="label">手机:</span> <span class="value" id="mobile">13800000000</span></div>
-        <div class="profile-entry"><span class="label">电话:</span> <span class="value" id="phone">(010)88888888</span></div>
-        <div class="profile-entry"><span class="label">QQ:</span> <span class="value" id="qq">123456789</span></div>
-        <div class="profile-entry"><span class="label">微信:</span> <span class="value" id="wechat">wechat_id</span></div>
-    </div>
-    <script >
-        $("#edit-btn").click(function(){
-            location.href="./EditProfille.html"
-        })
-    </script>
+	<div class="profile-container">
+		<div class="profile-header">
+			<h4>基本资料</h4><input type="button" value="修改档案" id="edit-btn" />
+		</div>
+		<div class="profile-entry"><span class="label">用户名:</span> <span class="value" id="username">Username123</span>
+		</div>
+		<div class="profile-entry"><span class="label">真实姓名:</span> <span class="value" id="real-name">张三</span></div>
+		<div class="profile-entry"><span class="label">性别:</span> <span class="value" id="gender">男</span></div>
+		<div class="profile-entry"><span class="label">生日:</span> <span class="value" id="birthday">男</span></div>
+		<div class="profile-entry"><span class="label">所属部门:</span> <span class="value" id="department">技术部</span></div>
+		<div class="profile-entry"><span class="label">工号:</span> <span class="value" id="employeeId">UT99888</span>
+		</div>
+		<div class="profile-entry"><span class="label">职位:</span> <span class="value" id="position">前端开发工程师</span></div>
+		<div class="profile-entry"><span class="label">入职日期:</span> <span class="value"
+				id="start-date">2023-04-27</span></div>
+		<div class="profile-entry"><span class="label">邮箱:</span> <span class="value"
+				id="email">email@example.com</span></div>
+		<div class="profile-entry"><span class="label">手机:</span> <span class="value" id="mobile">13800000000</span>
+		</div>
+		<div class="profile-entry"><span class="label">电话:</span> <span class="value" id="phone">(010)88888888</span>
+		</div>
+		<div class="profile-entry"><span class="label">QQ:</span> <span class="value" id="qq">123456789</span></div>
+		<div class="profile-entry"><span class="label">微信:</span> <span class="value" id="wechat">wechat_id</span></div>
+	</div>
+	<script>
+		$("#edit-btn").click(function () {
+			location.href = "./EditProfille.html"
+		})
+	</script>
 </body>
+
 </html>

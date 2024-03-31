@@ -2,241 +2,238 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width= , initial-scale=1.0">
-    <title>Bug详情</title>
-    <link rel="stylesheet" href="./css/bugmessage.css">
-    <link rel="stylesheet" href="./css/header.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width= , initial-scale=1.0">
+	<title>Bug详情</title>
+	<link rel="stylesheet" href="./css/bugmessage.css">
+	<link rel="stylesheet" href="./css/header.css">
 </head>
 
 <body class="bugview">
-    <div class="header">
-        <h1 id="BugManager" title="BugManager">BugManager</h1>
-        <div class="nav">
-            <ul>
-                <li><a href="./My.html">我的地盘</a></li>
-                <li><a href="./BugList.html">Bug</a></li>
-            </ul>
-        </div>
-        <div class="user">
-            <span id="userName">魏志航</span>
-            <div id="userDropdown" class="dropdown-content">
-                <a href="./MyProfile.html">个人档案</a>
-                <a onclick="out()"> 退出</a>
-            </div>
-        </div>
-    </div>
-    <script>
-        $(document).ready(function () {
-            // 检查是否存在保存的用户信息
-            var user = JSON.parse(localStorage.getItem("user"));
-            if (!user) {
-                // 如果没有保存的用户信息，跳转到Login.html
-                window.location.href = "Login.html";
-                return;
-            }
-            user = user[0];
-            $("#userName").text(user.Username);
+	<div class="header">
+		<h1 id="BugManager" title="BugManager">BugManager</h1>
+		<div class="nav">
+			<ul>
+				<li><a href="./My.html">我的地盘</a></li>
+				<li><a href="./BugList.html">Bug</a></li>
+			</ul>
+		</div>
+		<div class="user">
+			<span id="userName">魏志航</span>
+			<div id="userDropdown" class="dropdown-content">
+				<a href="./MyProfile.html">个人档案</a>
+				<a onclick="out()"> 退出</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function () {
+			// 检查是否存在保存的用户信息
+			var user = JSON.parse(localStorage.getItem("user"));
+			if (!user) {
+				// 如果没有保存的用户信息，跳转到Login.html
+				window.location.href = "Login.html";
+				return;
+			}
+			user = user[0];
+			$("#userName").text(user.Username);
 
-        })
+		})
 
-        function out() {
-            localStorage.removeItem("user");
-            location.href = "Login.html";
-        }
-    </script>
-
-
-    <main id="main">
-        <div class="container">
-            <!-- 左上标题 -->
-            <div id="mainMenu" class="clearfix">
-                <div class="btn-toolbar pull-left">
-                    <a href="/my-bug-assignedTo.html" class="btn btn-secondary"><i class="icon icon-back icon-sm"></i>
-                        返回</a>
-                    <div class="divider"></div>
-                    <div class="page-title">
-                        <span class="label label-id">6</span>
-                        <span class="text" title="用户反馈无法开挂">用户反馈无法开挂</span>
-                    </div>
-                </div>
+		function out() {
+			localStorage.removeItem("user");
+			location.href = "Login.html";
+		}
+	</script>
 
 
-
-            </div>
-            <!-- Bug详情 -->
-            <div id="mainContent" class="main-row">
-                <div class="main-col col-8">
-                    <div class="cell">
-                        <div class="detail">
-                            <div class="detail-title">重现步骤</div>
-                            <div class="detail-content article-content">
-                                <p class="stepTitle">[步骤]</p>
-                                <p>输入载入模块后</p>
-                                <br>
-                                <p class="stepTitle">[结果]</p>
-                                <p>404</p>
-                                <br>
-                                <p class="stepTitle">[期望]</p>
-                                <p>能正常使用外挂</p>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cell">
-                        <div class="detail histories" id="actionbox" data-textdiff="文本格式" data-original="原始格式">
-                            <style>
-                                .histories-list>li {
-                                    word-break: break-word;
-                                    word-wrap: break-word;
-                                }
-                            </style>
-
-                            <!-- 历史记录 -->
-                            <div class="detail-title">
-                                历史记录 &nbsp;
-                            </div>
-                            <div class="detail-content">
-                                <ol class="histories-list">
-                                    <li value="1">
-                                        2024-03-06 08:51:00, 由 <strong>产品经理</strong> 创建。
-                                    </li>
-                                    <li value="2">
-                                        2024-03-06 08:52:20, 由 <strong>产品经理</strong> 指派给 <strong>产品经理</strong>。
-
-                                        <div class="article-content comment">
-                                            <div class="comment-content">.....</div>
-                                        </div>
-                                    </li>
-                                    <li value="3">
-                                        2024-03-06 10:29:20, 由 <strong>产品经理</strong> 确认Bug。
-
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 下方按钮 -->
-                    <div class="main-actions" style="width:1140px;">
-                        <div class="btn-toolbar">
-                            <a href="BugList.html" id="back" class="btn" title="返回[快捷键:Alt+↑]">
-                                返回</a>
-                            <div class="divider"></div>
-                            <a href="/bug-assignTo-6.html?onlybody=yes" class="btn btn-link iframe">
-                                <span class="text">指派</span></a>
-                            <a href="/bug-resolve-6.html?onlybody=yes" class="btn btn-link iframe showinonlybody">
-
-                                <span class="text">解决</span></a>
-
-                            <div class="divider"></div><a href="/bug-edit-6.html" class="btn btn-link " title="编辑Bug">
-                                <i class="icon-common-edit icon-edit"><img class="divider-icon"
-                                        src="./image/icon/编辑-白.svg"></i></a>
-                            <a href="/bug-create-2-0-bugID=6.html" class="btn btn-link " title="复制Bug">
-                                <i class="icon-common-copy icon-copy"><img class="divider-icon"
-                                        src="./image/icon/复制-白.svg"></i></a>
-                        </div>
-                    </div>
-                    <div class="main-actions-holder" style="height: 74px;"></div>
-                </div>
-                <!-- 右侧上 -->
-                <div class="side-col col-4">
-                    <div class="cell">
-                        <div class="tabs">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#legendBasicInfo" data-toggle="tab">基本信息</a></li>
-
-                            </ul>
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="legendBasicInfo">
-                                    <table class="table table-data">
-                                        <tbody>
-
-                                            <tr>
-                                                <th>所属模块</th>
-                                                <td title="/">/</td>
-                                            </tr>
-
-                                            <tr>
-                                                <th>Bug类型</th>
-                                                <td>代码错误</td>
-                                            </tr>
-                                            <tr>
-                                                <th>严重程度</th>
-                                                <td>
-                                                    <span class="label-severity" data-severity="3" title="3"></span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>优先级</th>
-                                                <td><span class="label-pri label-pri-3" title="3">3</span></td>
-                                            </tr>
-                                            <tr>
-                                                <th>Bug状态</th>
-                                                <td><span class="status-bug status-active">激活</span></td>
-                                            </tr>
+	<main id="main">
+		<div class="container">
+			<!-- 左上标题 -->
+			<div id="mainMenu" class="clearfix">
+				<div class="btn-toolbar pull-left">
+					<a href="/my-bug-assignedTo.html" class="btn btn-secondary"><i class="icon icon-back icon-sm"></i>
+						返回</a>
+					<div class="divider"></div>
+					<div class="page-title">
+						<span class="label label-id">6</span>
+						<span class="text" title="用户反馈无法开挂">用户反馈无法开挂</span>
+					</div>
+				</div>
 
 
 
-                                            <tr>
-                                                <th>当前指派</th>
-                                                <td>产品经理 于 2024-03-06 10:29:20</td>
-                                            </tr>
-                                            <tr>
-                                                <th>截止日期</th>
-                                                <td>
-                                                    2024-03-07 </td>
-                                            </tr>
+			</div>
+			<!-- Bug详情 -->
+			<div id="mainContent" class="main-row">
+				<div class="main-col col-8">
+					<div class="cell">
+						<div class="detail">
+							<div class="detail-title">重现步骤</div>
+							<div class="detail-content article-content">
+								<p class="stepTitle">[步骤]</p>
+								<p>输入载入模块后</p>
+								<br>
+								<p class="stepTitle">[结果]</p>
+								<p>404</p>
+								<br>
+								<p class="stepTitle">[期望]</p>
+								<p>能正常使用外挂</p>
+								<br>
+							</div>
+						</div>
+					</div>
+					<div class="cell">
+						<div class="detail histories" id="actionbox" data-textdiff="文本格式" data-original="原始格式">
+							<style>
+								.histories-list>li {
+									word-break: break-word;
+									word-wrap: break-word;
+								}
+							</style>
 
-                                        </tbody>
-                                    </table>
-                                </div>
+							<!-- 历史记录 -->
+							<div class="detail-title">
+								历史记录 &nbsp;
+							</div>
+							<div class="detail-content">
+								<ol class="histories-list">
+									<li value="1">
+										2024-03-06 08:51:00, 由 <strong>产品经理</strong> 创建。
+									</li>
+									<li value="2">
+										2024-03-06 08:52:20, 由 <strong>产品经理</strong> 指派给 <strong>产品经理</strong>。
 
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 右下 -->
-                    <div class="cell">
-                        <div class="tabs">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#legendLife" data-toggle="tab">Bug的一生</a></li>
+										<div class="article-content comment">
+											<div class="comment-content">.....</div>
+										</div>
+									</li>
+									<li value="3">
+										2024-03-06 10:29:20, 由 <strong>产品经理</strong> 确认Bug。
 
-                            </ul>
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="legendLife">
-                                    <table class="table table-data">
-                                        <tbody>
-                                            <tr>
-                                                <th class="thWidth">由谁创建</th>
-                                                <td> 产品经理 于 2024-03-06 08:51:00</td>
-                                            </tr>
+									</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+					<!-- 下方按钮 -->
+					<div class="main-actions" style="width:1140px;">
+						<div class="btn-toolbar">
+							<a href="BugList.html" id="back" class="btn" title="返回[快捷键:Alt+↑]">
+								返回</a>
+							<div class="divider"></div>
+							<a href="/bug-assignTo-6.html?onlybody=yes" class="btn btn-link iframe">
+								<span class="text">指派</span></a>
+							<a href="/bug-resolve-6.html?onlybody=yes" class="btn btn-link iframe showinonlybody">
 
-                                            <tr>
-                                                <th>由谁解决</th>
-                                                <td></td>
-                                            </tr>
+								<span class="text">解决</span></a>
+
+							<div class="divider"></div><a href="/bug-edit-6.html" class="btn btn-link " title="编辑Bug">
+								<i class="icon-common-edit icon-edit"><img class="divider-icon"
+										src="./image/icon/编辑-白.svg"></i></a>
+							<a href="/bug-create-2-0-bugID=6.html" class="btn btn-link " title="复制Bug">
+								<i class="icon-common-copy icon-copy"><img class="divider-icon"
+										src="./image/icon/复制-白.svg"></i></a>
+						</div>
+					</div>
+					<div class="main-actions-holder" style="height: 74px;"></div>
+				</div>
+				<!-- 右侧上 -->
+				<div class="side-col col-4">
+					<div class="cell">
+						<div class="tabs">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#legendBasicInfo" data-toggle="tab">基本信息</a></li>
+
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane active" id="legendBasicInfo">
+									<table class="table table-data">
+										<tbody>
+
+											<tr>
+												<th>所属模块</th>
+												<td title="/">/</td>
+											</tr>
+
+											<tr>
+												<th>Bug类型</th>
+												<td>代码错误</td>
+											</tr>
+											<tr>
+												<th>严重程度</th>
+												<td>
+													<span class="label-severity" data-severity="3" title="3"></span>
+												</td>
+											</tr>
+											<tr>
+												<th>优先级</th>
+												<td><span class="label-pri label-pri-3" title="3">3</span></td>
+											</tr>
+											<tr>
+												<th>Bug状态</th>
+												<td><span class="status-bug status-active">激活</span></td>
+											</tr>
 
 
-                                            <tr>
-                                                <th>由谁关闭</th>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <th>最后修改</th>
-                                                <td>产品经理 于 2024-03-06 10:29:20</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+											<tr>
+												<th>当前指派</th>
+												<td>产品经理 于 2024-03-06 10:29:20</td>
+											</tr>
+											<tr>
+												<th>截止日期</th>
+												<td>
+													2024-03-07 </td>
+											</tr>
+
+										</tbody>
+									</table>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!-- 右下 -->
+					<div class="cell">
+						<div class="tabs">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#legendLife" data-toggle="tab">Bug的一生</a></li>
+
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane active" id="legendLife">
+									<table class="table table-data">
+										<tbody>
+											<tr>
+												<th class="thWidth">由谁创建</th>
+												<td> 产品经理 于 2024-03-06 08:51:00</td>
+											</tr>
+
+											<tr>
+												<th>由谁解决</th>
+												<td></td>
+											</tr>
+
+
+											<tr>
+												<th>由谁关闭</th>
+												<td></td>
+											</tr>
+	
+										</tbody>
+									</table>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 
 
-    </main>
+	</main>
 
 
 </body>

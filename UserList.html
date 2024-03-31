@@ -2,201 +2,201 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>用户列表</title>
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/userlist.css">
-    <script src="./js/jquery-3.4.1.min.js"></script>
-    <script src="./js/userlist.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>用户列表</title>
+	<link rel="stylesheet" href="./css/header.css">
+	<link rel="stylesheet" href="./css/userlist.css">
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./js/userlist.js"></script>
 </head>
 
 <body>
-    <div class="header">
-        <h1 id="BugManager" title="BugManager">BugManager</h1>
-        <div class="nav">
-            <ul>
-                <li><a href="./UserList.html">用户管理</a></li>
-            </ul>
-        </div>
-        <div class="user">
-            <span id="userName">魏志航</span>
-            <div id="userDropdown" class="dropdown-content">
-                <a href="./MyProfile.html">个人档案</a>
-                <a onclick="out()"> 退出</a>
-            </div>
-        </div>
-    </div>
-    <script>
-        $(document).ready(function () {
-            // 检查是否存在保存的用户信息
-            var user = JSON.parse(localStorage.getItem("user"));
-            if (!user) {
-                // 如果没有保存的用户信息，跳转到Login.html
-                window.location.href = "Login.html";
-                return;
-            }
-            user = user[0];
-            $("#userName").text(user.Username);
+	<div class="header">
+		<h1 id="BugManager" title="BugManager">BugManager</h1>
+		<div class="nav">
+			<ul>
+				<li><a href="./UserList.html">用户管理</a></li>
+			</ul>
+		</div>
+		<div class="user">
+			<span id="userName">魏志航</span>
+			<div id="userDropdown" class="dropdown-content">
+				<a href="./MyProfile.html">个人档案</a>
+				<a onclick="out()"> 退出</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function () {
+			// 检查是否存在保存的用户信息
+			var user = JSON.parse(localStorage.getItem("user"));
+			if (!user) {
+				// 如果没有保存的用户信息，跳转到Login.html
+				window.location.href = "Login.html";
+				return;
+			}
+			user = user[0];
+			$("#userName").text(user.Username);
 
-        })
+		})
 
-        function out() {
-            localStorage.removeItem("user");
-            location.href = "Login.html";
-        }
-    </script>
+		function out() {
+			localStorage.removeItem("user");
+			location.href = "Login.html";
+		}
+	</script>
 
-    <div class="MainBody">
-        <!-- 搜索框 -->
-        <div class="searchlist">
-            <div class="dropdown" style="margin-left:50px; width:120px;">
-                <p>角色:</p>
-                <select class="RoleId" style="width:80px; ">
-                    <option value="0">所有</option>
-                    <option value="1">用户</option>
-                    <option value="2">管理员</option>
-                </select>
-            </div>
-            <div class="dropdown" style="width:120px; ">
-                <p>姓名:</p>
-                <input class="userName" style="width:100px; " type="text">
-            </div>
-            <div class="searchbutton" style="width:120px; ">
-                <input style="width:80px; " type="button" name="" id="show" value="搜索">
-            </div>
-            <div class="searchbutton addUser" style="width:120px;">
-                <input type="button" name="" id="goAddUser" value="新增用户">
-            </div>
-            <script> </script>
-        </div>
-        <!-- 表格 -->
-        <table class="formclass">
-            <thead class="thead">
-                <tr>
-                    <th>工号</th>
-                    <th>姓名</th>
-                    <th>部门</th>
-                     <th>职位</th>
-                    <th>邮箱</th>
-                    <th>性别</th>
-                    <th>入职日期</th>
-                    <th>生日</th>
-                    <th>电话</th>
-                    <th>手机</th>                  
-                    <th>QQ</th>
-                    <th>身份</th>
-                    <th>用户名</th>
-                    <th>微信</th>
-                    <th>操作</th>
-                </tr>
-            </thead>
-            <tbody class="resultList">
-                <tr class="tdcolor">
-                    <td>UT000008</td>
-                    <td>周洋</td>
-                    <td>市场部</td>
-                    <td>市场专员</td>
-                    <td>zhouyang@example.com</td>
-                    <td>女</td>
-                    <td>2023-03-20</td>
-                    <td>2024-02-13</td>
-                    <td>8901234567</td>
-                    <td>3210987654</td>
-                    
-                    <td>890123456</td>
-                    <td>1</td>
-                    <td>ZhouYang</td>
-                    <td>zhouyangpro</td>
-                    <td><input class="editUser" style="width: 80px;  font-size: 16px;" type="button" value="编辑"></td>
-                </tr>
-                <tr class="tdcolor1">
-                    <td>UT000008</td>
-                    <td>周洋</td>
-                    <td>市场部</td>
-                    <td>zhouyang@example.com</td>
-                    <td>女</td>
-                    <td>2023-03-20</td>
-                    <td>2024-02-13</td>
-                    <td>8901234567</td>
-                    <td>3210987654</td>
-                    <td>市场专员</td>
-                    <td>890123456</td>
-                    <td>1</td>
-                    <td>ZhouYang</td>
-                    <td>zhouyangpro</td>
-                    <td><input class="editUser" style="width: 80px;  font-size: 16px;" type="button" value="编辑"></td>
-                </tr>
-                <tr class="tdcolor">
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                </tr>
-                <tr class="tdcolor1">
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                </tr>
+	<div class="MainBody">
+		<!-- 搜索框 -->
+		<div class="searchlist">
+			<div class="dropdown" style="margin-left:50px; width:120px;">
+				<p>角色:</p>
+				<select class="RoleId" style="width:80px; ">
+					<option value="0">所有</option>
+					<option value="1">用户</option>
+					<option value="2">管理员</option>
+				</select>
+			</div>
+			<div class="dropdown" style="width:120px; ">
+				<p>姓名:</p>
+				<input class="userName" style="width:100px; " type="text">
+			</div>
+			<div class="searchbutton" style="width:120px; ">
+				<input style="width:80px; " type="button" name="" id="show" value="搜索">
+			</div>
+			<div class="searchbutton addUser" style="width:120px;">
+				<input type="button" name="" id="goAddUser" value="新增用户">
+			</div>
+			<script> </script>
+		</div>
+		<!-- 表格 -->
+		<table class="formclass">
+			<thead class="thead">
+				<tr>
+					<th>工号</th>
+					<th>姓名</th>
+					<th>部门</th>
+					<th>职位</th>
+					<th>邮箱</th>
+					<th>性别</th>
+					<th>入职日期</th>
+					<th>生日</th>
+					<th>电话</th>
+					<th>手机</th>
+					<th>QQ</th>
+					<th>身份</th>
+					<th>用户名</th>
+					<th>微信</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody class="resultList">
+				<tr class="tdcolor">
+					<td>UT000008</td>
+					<td>周洋</td>
+					<td>市场部</td>
+					<td>市场专员</td>
+					<td>zhouyang@example.com</td>
+					<td>女</td>
+					<td>2023-03-20</td>
+					<td>2024-02-13</td>
+					<td>8901234567</td>
+					<td>3210987654</td>
 
-            </tbody>
+					<td>890123456</td>
+					<td>1</td>
+					<td>ZhouYang</td>
+					<td>zhouyangpro</td>
+					<td><input class="editUser" style="width: 80px;  font-size: 16px;" type="button" value="编辑"></td>
+				</tr>
+				<tr class="tdcolor1">
+					<td>UT000008</td>
+					<td>周洋</td>
+					<td>市场部</td>
+					<td>zhouyang@example.com</td>
+					<td>女</td>
+					<td>2023-03-20</td>
+					<td>2024-02-13</td>
+					<td>8901234567</td>
+					<td>3210987654</td>
+					<td>市场专员</td>
+					<td>890123456</td>
+					<td>1</td>
+					<td>ZhouYang</td>
+					<td>zhouyangpro</td>
+					<td><input class="editUser" style="width: 80px;  font-size: 16px;" type="button" value="编辑"></td>
+				</tr>
+				<tr class="tdcolor">
+					<td> </td>
+					<td> </td>
+					<td> </td>
+					<td> </td>
+					<td> </td>
+					<td> </td>
+					<td> </td>
+				</tr>
+				<tr class="tdcolor1">
+					<td> </td>
+					<td> </td>
+					<td> </td>
+					<td> </td>
+					<td> </td>
+					<td> </td>
+					<td> </td>
+				</tr>
 
-
+			</tbody>
 
 
-        </table>
-        <!-- 列表 -->
-        <div class="pagemsg">
-            <div class="pageicon">
-                <div class="prev step-backward">
-                    <i class="fa fa-step-backward" aria-hidden="true">
-                        <img src="./image/icon/firstpage.svg">
-                    </i>
-                </div>
-                <div class="prev chevron-left">
-                    <i class="fa fa-chevron-left" aria-hidden="true">
-                        <img src="./image/icon/lastpage.svg">
-                    </i>
-                </div>
-                <div class="NUM">
-                    <select class="pages pageSelect" style="width:80px; ">
-                        <option value="volvo">1</option>
-                    </select>
-                </div>
-                <div class="prev chevron-right">
-                    <i class="fa fa-chevron-right" aria-hidden="true">
-                        <img src="./image/icon/nextpage.svg">
-                    </i>
-                </div>
-                <div class="prev step-forward">
-                    <i class="fa fa-step-forward" aria-hidden="true">
-                        <img src="./image/icon/endpage.svg">
-                    </i>
-                </div>
-            </div>
-            <div class="totalpage">
-                <span>
-                    Total Pages：
-                </span>
-                <span class="pages pageNum">
-                    10
-                </span>
-                <span>
-                    Total Records:
-                </span>
-                <span class="totals">
-                    200
-                </span>
-            </div>
-        </div>
-    </div>
+
+
+		</table>
+		<!-- 列表 -->
+		<div class="pagemsg">
+			<div class="pageicon">
+				<div class="prev step-backward">
+					<i class="fa fa-step-backward" aria-hidden="true">
+						<img src="./image/icon/firstpage.svg">
+					</i>
+				</div>
+				<div class="prev chevron-left">
+					<i class="fa fa-chevron-left" aria-hidden="true">
+						<img src="./image/icon/lastpage.svg">
+					</i>
+				</div>
+				<div class="NUM">
+					<select class="pages pageSelect" style="width:80px; ">
+						<option value="volvo">1</option>
+					</select>
+				</div>
+				<div class="prev chevron-right">
+					<i class="fa fa-chevron-right" aria-hidden="true">
+						<img src="./image/icon/nextpage.svg">
+					</i>
+				</div>
+				<div class="prev step-forward">
+					<i class="fa fa-step-forward" aria-hidden="true">
+						<img src="./image/icon/endpage.svg">
+					</i>
+				</div>
+			</div>
+			<div class="totalpage">
+				<span>
+					Total Pages：
+				</span>
+				<span class="pages pageNum">
+					10
+				</span>
+				<span>
+					Total Records:
+				</span>
+				<span class="totals">
+					200
+				</span>
+			</div>
+		</div>
+	</div>
 
 </body>
 

@@ -2,116 +2,116 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BugList</title>
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/buglist.css">
-    <script src="./js/jquery-3.4.1.min.js"></script>
-    <script src="./js/myhome.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BugList</title>
+	<link rel="stylesheet" href="./css/header.css">
+	<link rel="stylesheet" href="./css/buglist.css">
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./js/myhome.js"></script>
 </head>
 
 <body class="MainBody">
 
-    <div class="header">
-        <h1 id="BugManager" title="BugManager">BugManager</h1>
-        <div class="nav">
-            <ul>
-                <li><a href="./My.html">我的地盘</a></li>
-                <li><a href="./BugList.html">Bug</a></li>
-            </ul>
-        </div>
-        <div class="user">
-            <span id="userName">魏志航</span>
-            <div id="userDropdown" class="dropdown-content">
-                <a href="./MyProfile.html">个人档案</a>
-                <a onclick="out()"> 退出</a>
-            </div>
-        </div>
-    </div>
-    <script>
-        $(document).ready(function () {
-            // 检查是否存在保存的用户信息
-            var user = JSON.parse(localStorage.getItem("user"));
-            if (!user) {
-                // 如果没有保存的用户信息，跳转到Login.html
-                window.location.href = "Login.html";
-                return;
-            }
-            user = user[0];
-            $("#userName").text(user.Username);
+	<div class="header">
+		<h1 id="BugManager" title="BugManager">BugManager</h1>
+		<div class="nav">
+			<ul>
+				<li><a href="./My.html">我的地盘</a></li>
+				<li><a href="./BugList.html">Bug</a></li>
+			</ul>
+		</div>
+		<div class="user">
+			<span id="userName">魏志航</span>
+			<div id="userDropdown" class="dropdown-content">
+				<a href="./MyProfile.html">个人档案</a>
+				<a onclick="out()"> 退出</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function () {
+			// 检查是否存在保存的用户信息
+			var user = JSON.parse(localStorage.getItem("user"));
+			if (!user) {
+				// 如果没有保存的用户信息，跳转到Login.html
+				window.location.href = "Login.html";
+				return;
+			}
+			user = user[0];
+			$("#userName").text(user.Username);
 
-        })
+		})
 
-        function out() {
-            localStorage.removeItem("user");
-            location.href = "Login.html";
-        }
-    </script>
-
-
-
-    <div class="center-container">
-
-        <div class="center-head">
-            <div class="header-left-list">
-                <span class="header-left-txt">主页</span>
-            </div>
-            <div class="header-left">
-                <span class="filter-option">所有</span>
-                <span class="filter-option">未关闭</span>
-                <span class="filter-option">由我创建</span>
-                <span class="filter-option">指派给我</span>
-            </div>
-            <div class="header-right">
-                <select class="dropdown">
-                    <option value="Bug标题">Bug标题</option>
-                    <option value="BugID">BugID</option>
-                    <option value="创建人">创建人</option>
-                </select>
-                <div class="search-container">
-                    <input type="text" placeholder="">
-                    <button class="search-button">搜索</button>
-                </div>
-                <div class="newButton">
-                    <input type="button" value="提bug" id="newButton" >
-                </div>
-            </div>
-        </div>
-    </div>
-
-<script>
-    
-    $(".newButton").click(function(){
-        location.href="AddBug.html";
-    })
-</script>
+		function out() {
+			localStorage.removeItem("user");
+			location.href = "Login.html";
+		}
+	</script>
 
 
 
-    <div class="center-main">
+	<div class="center-container">
+
+		<div class="center-head">
+			<div class="header-left-list">
+				<span class="header-left-txt">主页</span>
+			</div>
+			<div class="header-left">
+				<span class="filter-option">所有</span>
+				<span class="filter-option">未关闭</span>
+				<span class="filter-option">由我创建</span>
+				<span class="filter-option">指派给我</span>
+			</div>
+			<div class="header-right">
+				<select class="dropdown">
+					<option value="Bug标题">Bug标题</option>
+					<option value="BugID">BugID</option>
+					<option value="创建人">创建人</option>
+				</select>
+				<div class="search-container">
+					<input type="text" placeholder="">
+					<button class="search-button">搜索</button>
+				</div>
+				<div class="newButton">
+					<input type="button" value="提bug" id="newButton">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+
+		$(".newButton").click(function () {
+			location.href = "AddBug.html";
+		})
+	</script>
 
 
-        <div class="center-left">
-            <ul class="project-list">
-                <li>项目1</li>
-                <li>项目2</li>
-                <li>项dCDC的目3</li>
-                <li>项目1</li>
-                <li>项目2</li>
-                <li>项目得得得得得3</li>
-                <li>项目1</li>
-                <li>项目2</li>
-                <li>项目2，还哗哗哗嗨嗨</li>
 
-                <li>项目1得得得得得得得得</li>
-                <li>项目2</li>
-                <li>项目成都v热v热v3</li>
-                <li>项目1</li>
-                <li>项目2</li>
-                <li>项目3</li>
-                <!-- 其他项目 -->
-                <a href="./EditPanel.html" class="btn btn-info btn-wide" style=" 
+	<div class="center-main">
+
+
+		<div class="center-left">
+			<ul class="project-list">
+				<li>项目1</li>
+				<li>项目2</li>
+				<li>项dCDC的目3</li>
+				<li>项目1</li>
+				<li>项目2</li>
+				<li>项目得得得得得3</li>
+				<li>项目1</li>
+				<li>项目2</li>
+				<li>项目2，还哗哗哗嗨嗨</li>
+
+				<li>项目1得得得得得得得得</li>
+				<li>项目2</li>
+				<li>项目成都v热v热v3</li>
+				<li>项目1</li>
+				<li>项目2</li>
+				<li>项目3</li>
+				<!-- 其他项目 -->
+				<a href="./EditPanel.html" class="btn btn-info btn-wide" style=" 
                    -webkit-text-size-adjust: 100%;
                 -webkit-tap-highlight-color: rgba(0,0,0,0);
                 box-sizing: border-box;
@@ -136,141 +136,141 @@
                 background-color: #e9f2fb;
                 border-color: transparent;
                 min-width: 10px;">维护模块</a>
-            </ul>
-            
-        </div>
-        <div class="buglist">
-            <table class="formclass">
-                <thead class="thead">
-                    <tr>
-                        <th>ID</th>
-                        <th>级别</th>
-                        <th>P</th>
-                        <th>Bug标题</th>
-                        <th>状态</th>
-                        <th>创建日期</th>
-                        <th>指派给</th>
-                        <th>操作</th>
-                    </tr>
-                </thead>
-                <tbody class="resultList">
-                    <tr class="tdcolor">
-                        <td>22345</td>
-                        <td>1</td>
-                        <td>3</td>
-                        <td class="bug-title" >
-                            1988-0xwsx</td>
-                        <td>激活</td>
-                        <td class="add-time">Office User</td>
-                        <td class="for-user">世世代代</td>
-                        <td>
-                            <a href="Editbug.html" class="btn" title="编辑Bug">
-                                <img class="icon-editbug" src="./image/icon/编辑.svg">
-                            </a>
-                            <a href="Dealbug.html" class="btn" title="解决">
-                                <img class="icon-dealbug" src="./image/icon/解决.svg">
-                            </a>
-                            <a href="Closebug.html" class="btn" title="关闭">
-                                <img class="icon-closebug" src="./image/icon/关闭.svg">
-                            </a>
-                            <a href="CopyBug.html" class="btn" title="复制Bug">
-                                <img class="icon-copybug" src="./image/icon/复制.svg">
-                            </a>
+			</ul>
 
-                        </td>
-                    </tr>
-                    <tr class="tdcolor1">
-                        <td>22345</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td class="bug-title" >
-                            1988-06-06xwsxwxwxwxwx</td>
-                        <td>激活</td>
-                        <td class="add-time">Office User</td>
-                        <td class="for-user">杀杀杀</td>
-                        <td>
-                            <a href="Editbug.html" class="btn" title="编辑Bug" >
-                                <img class="icon-editbug" src="./image/icon/编辑.svg">
-                            </a>
-                            <a href="Dealbug.html" class="btn" title="解决">
-                                <img class="icon-dealbug" src="./image/icon/解决.svg">
-                            </a>
-                            <a href="Closebug.html" class="btn" title="关闭">
-                                <img class="icon-closebug" src="./image/icon/关闭.svg">
-                            </a>
-                            <a href="CopyBug.html" class="btn" title="复制Bug">
-                                <img class="icon-copybug" src="./image/icon/复制.svg">
-                            </a>
+		</div>
+		<div class="buglist">
+			<table class="formclass">
+				<thead class="thead">
+					<tr>
+						<th>ID</th>
+						<th>级别</th>
+						<th>P</th>
+						<th>Bug标题</th>
+						<th>状态</th>
+						<th>创建日期</th>
+						<th>指派给</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody class="resultList">
+					<tr class="tdcolor">
+						<td>22345</td>
+						<td>1</td>
+						<td>3</td>
+						<td class="bug-title">
+							1988-0xwsx</td>
+						<td>激活</td>
+						<td class="add-time">Office User</td>
+						<td class="for-user">世世代代</td>
+						<td>
+							<a href="Editbug.html" class="btn" title="编辑Bug">
+								<img class="icon-editbug" src="./image/icon/编辑.svg">
+							</a>
+							<a href="Dealbug.html" class="btn" title="解决">
+								<img class="icon-dealbug" src="./image/icon/解决.svg">
+							</a>
+							<a href="Closebug.html" class="btn" title="关闭">
+								<img class="icon-closebug" src="./image/icon/关闭.svg">
+							</a>
+							<a href="CopyBug.html" class="btn" title="复制Bug">
+								<img class="icon-copybug" src="./image/icon/复制.svg">
+							</a>
 
-                        </td>
-                    </tr>
+						</td>
+					</tr>
+					<tr class="tdcolor1">
+						<td>22345</td>
+						<td>1</td>
+						<td>2</td>
+						<td class="bug-title">
+							1988-06-06xwsxwxwxwxwx</td>
+						<td>激活</td>
+						<td class="add-time">Office User</td>
+						<td class="for-user">杀杀杀</td>
+						<td>
+							<a href="Editbug.html" class="btn" title="编辑Bug">
+								<img class="icon-editbug" src="./image/icon/编辑.svg">
+							</a>
+							<a href="Dealbug.html" class="btn" title="解决">
+								<img class="icon-dealbug" src="./image/icon/解决.svg">
+							</a>
+							<a href="Closebug.html" class="btn" title="关闭">
+								<img class="icon-closebug" src="./image/icon/关闭.svg">
+							</a>
+							<a href="CopyBug.html" class="btn" title="复制Bug">
+								<img class="icon-copybug" src="./image/icon/复制.svg">
+							</a>
 
-
-                    <tr>
-                    </tr>
-
-                </tbody>
-
-               
+						</td>
+					</tr>
 
 
-            </table>   
-            <div class="pagemsg"> 
-                <div class="pageicon">
-                    <div class="prev step-backward">
-                        <i class="fa fa-step-backward" aria-hidden="true">
-                            <img src="./image/icon/firstpage.svg">
-                        </i>
-                    </div>
-                    <div class="prev chevron-left">
-                        <i class="fa fa-chevron-left" aria-hidden="true">
-                            <img src="./image/icon/lastpage.svg">
-                        </i>
-                    </div>
-                    <div class="NUM">
-                        <select class="pages pageSelect" style="width:80px; ">
-                            <option value="volvo">1</option>
-                        </select>    
-                    </div>
-                    <div class="prev chevron-right">
-                        <i class="fa fa-chevron-right" aria-hidden="true">
-                            <img src="./image/icon/nextpage.svg">
-                        </i>
-                    </div>
-                    <div class="prev step-forward">
-                        <i class="fa fa-step-forward" aria-hidden="true">
-                            <img src="./image/icon/endpage.svg">
-                        </i>
-                    </div>
-                </div>
-                <div class="totalpage">
-                    <span>
-                        Total Pages：
-                    </span>
-                    <span class="pages pageNum">
-                        10
-                    </span>
-                    <span>
-                        Total Records:
-                    </span>
-                    <span class="totals">
-                        200
-                    </span>
-                </div>
-            </div>
+					<tr>
+					</tr>
+
+				</tbody>
 
 
 
 
-        </div>
+			</table>
+			<div class="pagemsg">
+				<div class="pageicon">
+					<div class="prev step-backward">
+						<i class="fa fa-step-backward" aria-hidden="true">
+							<img src="./image/icon/firstpage.svg">
+						</i>
+					</div>
+					<div class="prev chevron-left">
+						<i class="fa fa-chevron-left" aria-hidden="true">
+							<img src="./image/icon/lastpage.svg">
+						</i>
+					</div>
+					<div class="NUM">
+						<select class="pages pageSelect" style="width:80px; ">
+							<option value="volvo">1</option>
+						</select>
+					</div>
+					<div class="prev chevron-right">
+						<i class="fa fa-chevron-right" aria-hidden="true">
+							<img src="./image/icon/nextpage.svg">
+						</i>
+					</div>
+					<div class="prev step-forward">
+						<i class="fa fa-step-forward" aria-hidden="true">
+							<img src="./image/icon/endpage.svg">
+						</i>
+					</div>
+				</div>
+				<div class="totalpage">
+					<span>
+						Total Pages：
+					</span>
+					<span class="pages pageNum">
+						10
+					</span>
+					<span>
+						Total Records:
+					</span>
+					<span class="totals">
+						200
+					</span>
+				</div>
+			</div>
 
 
-     
 
-    </div>
-  
- 
- 
+
+		</div>
+
+
+
+
+	</div>
+
+
+
 
 
 </body>

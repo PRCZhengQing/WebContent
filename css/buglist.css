@@ -3,21 +3,21 @@ background-color: rgb(239, 239, 239);
 } */
 
 .MainBody {
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    box-sizing: border-box;
-    margin: 0;
-    font-size: 13px;
-    line-height: 1.42857143;
-    color: #3c4353;
-    padding-bottom: 40px;
-    background-color: #efefef;
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	box-sizing: border-box;
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.42857143;
+	color: #3c4353;
+	padding-bottom: 40px;
+	background-color: #efefef;
 }
 
 .center-container {
-    display: flex;
-    margin-top: 40px;
-    height: auto;
+	display: flex;
+	margin-top: 40px;
+	height: auto;
 }
 
 
@@ -25,268 +25,268 @@ background-color: rgb(239, 239, 239);
 
 
 .project-list li {
-    margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 .center-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    height: 40px;
-    width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	height: 40px;
+	width: 100%;
 }
 
 .header-left-list {
 
 
-    bottom: 0;
-    margin-left: 80px;
-    padding-bottom: 8px;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-top: 8px;
-    align-items: center;
-    display: flex;
+	bottom: 0;
+	margin-left: 80px;
+	padding-bottom: 8px;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-top: 8px;
+	align-items: center;
+	display: flex;
 
 }
 
 .header-left-txt {
-    font-weight: bold;
-    width: 60px;
-    background-color: rgb(255, 255, 255);
-    border-bottom-left-radius: 4px;
-    /* 底部左侧圆角半径为4像素 */
-    border-bottom-right-radius: 4px;
-    /* 底部右侧圆角半径为4像素 */
-    border-top-left-radius: 4px;
-    /* 顶部左侧圆角半径为4像素 */
-    border-top-right-radius: 4px;
-    box-sizing: border-box;
-    color: rgb(60, 67, 83);
-    font-size: 15px;
-    list-style-image: none;
-    list-style-position: outside;
-    list-style-type: none;
-    padding-bottom: 4px;
-    padding-left: 6px;
-    padding-right: 6px;
-    padding-top: 4px;
-    text-align: center;
+	font-weight: bold;
+	width: 60px;
+	background-color: rgb(255, 255, 255);
+	border-bottom-left-radius: 4px;
+	/* 底部左侧圆角半径为4像素 */
+	border-bottom-right-radius: 4px;
+	/* 底部右侧圆角半径为4像素 */
+	border-top-left-radius: 4px;
+	/* 顶部左侧圆角半径为4像素 */
+	border-top-right-radius: 4px;
+	box-sizing: border-box;
+	color: rgb(60, 67, 83);
+	font-size: 15px;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	padding-bottom: 4px;
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 4px;
+	text-align: center;
 }
 
 .header-left {
 
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    padding-bottom: 8px;
-    /* 底部内边距为8像素 */
-    padding-left: 12px;
-    /* 左侧内边距为12像素 */
-    padding-right: 12px;
-    /* 右侧内边距为12像素 */
-    padding-top: 8px;
-    /* 顶部内边距为8像素 */
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+	padding-bottom: 8px;
+	/* 底部内边距为8像素 */
+	padding-left: 12px;
+	/* 左侧内边距为12像素 */
+	padding-right: 12px;
+	/* 右侧内边距为12像素 */
+	padding-top: 8px;
+	/* 顶部内边距为8像素 */
 
 
-    align-items: center;
+	align-items: center;
 
-    display: flex;
-    /* width: 30%; */
-    /* height: 50px; */
+	display: flex;
+	/* width: 30%; */
+	/* height: 50px; */
 }
 
 .filter-option {
 
 
-    box-sizing: border-box;
-    /* 盒模型为边框框盒 */
-    color: rgb(60, 67, 83);
-    /* 文本颜色为RGB(60, 67, 83) */
-    cursor: pointer;
-    /* 光标样式为指针 */
-    display: block;
-    /* 元素以块级方式显示 */
-    font-size: 14px;
-    /* 字体大小为14像素 */
-    /* line-height: 24px; */
-    /* 行高为24像素 */
-    list-style-image: none;
-    /* 列表项图像为空 */
-    list-style-position: outside;
-    /* 列表项标记位置为外部 */
-    list-style-type: none;
-    /* 列表项标记类型为空 */
-    padding-bottom: 8px;
-    /* 底部内边距为8像素 */
-    padding-left: 12px;
-    /* 左侧内边距为12像素 */
-    padding-right: 12px;
-    /* 右侧内边距为12像素 */
-    padding-top: 8px;
-    /* 顶部内边距为8像素 */
-    position: relative;
-    /* 元素定位方式为相对定位 */
-    text-align: center;
-    /* 文本对齐方式为居中对齐 */
-    text-decoration-color: rgb(60, 67, 83);
-    /* 文本装饰线颜色为RGB(60, 67, 83) */
-    text-decoration-line: none;
-    /* 文本装饰线为空 */
-    text-decoration-style: solid;
-    /* 文本装饰线样式为实线 */
-    text-decoration-thickness: auto;
-    /* 文本装饰线粗细为自动 */
-    /* text-size-adjust: 100%; */
-    /* 文本尺寸调整为100% */
-    transition-behavior: normal;
-    /* 过渡行为为正常 */
-    transition-delay: 0s;
-    /* 过渡延迟时间为0秒 */
-    transition-duration: 0.4s;
-    /* 过渡持续时间为0.4秒 */
-    transition-property: color, background, transform, opacity, left, top, right, bottom, -webkit-transform, -o-transform;
-    /* 过渡属性为颜色、背景、变换、透明度、左侧、顶部、右侧、底部、-webkit变换、-o变换 */
+	box-sizing: border-box;
+	/* 盒模型为边框框盒 */
+	color: rgb(60, 67, 83);
+	/* 文本颜色为RGB(60, 67, 83) */
+	cursor: pointer;
+	/* 光标样式为指针 */
+	display: block;
+	/* 元素以块级方式显示 */
+	font-size: 14px;
+	/* 字体大小为14像素 */
+	/* line-height: 24px; */
+	/* 行高为24像素 */
+	list-style-image: none;
+	/* 列表项图像为空 */
+	list-style-position: outside;
+	/* 列表项标记位置为外部 */
+	list-style-type: none;
+	/* 列表项标记类型为空 */
+	padding-bottom: 8px;
+	/* 底部内边距为8像素 */
+	padding-left: 12px;
+	/* 左侧内边距为12像素 */
+	padding-right: 12px;
+	/* 右侧内边距为12像素 */
+	padding-top: 8px;
+	/* 顶部内边距为8像素 */
+	position: relative;
+	/* 元素定位方式为相对定位 */
+	text-align: center;
+	/* 文本对齐方式为居中对齐 */
+	text-decoration-color: rgb(60, 67, 83);
+	/* 文本装饰线颜色为RGB(60, 67, 83) */
+	text-decoration-line: none;
+	/* 文本装饰线为空 */
+	text-decoration-style: solid;
+	/* 文本装饰线样式为实线 */
+	text-decoration-thickness: auto;
+	/* 文本装饰线粗细为自动 */
+	/* text-size-adjust: 100%; */
+	/* 文本尺寸调整为100% */
+	transition-behavior: normal;
+	/* 过渡行为为正常 */
+	transition-delay: 0s;
+	/* 过渡延迟时间为0秒 */
+	transition-duration: 0.4s;
+	/* 过渡持续时间为0.4秒 */
+	transition-property: color, background, transform, opacity, left, top, right, bottom, -webkit-transform, -o-transform;
+	/* 过渡属性为颜色、背景、变换、透明度、左侧、顶部、右侧、底部、-webkit变换、-o变换 */
 }
 
 .header-right {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 
 
 
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    /* margin: auto; */
-    margin-left: 0%;
-    padding-bottom: 8px;
-    /* 底部内边距为8像素 */
-    padding-left: 12px;
-    /* 左侧内边距为12像素 */
-    padding-right: 12px;
-    /* 右侧内边距为12像素 */
-    padding-top: 8px;
-    /* 顶部内边距为8像素 */
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	/* margin: auto; */
+	margin-left: 0%;
+	padding-bottom: 8px;
+	/* 底部内边距为8像素 */
+	padding-left: 12px;
+	/* 左侧内边距为12像素 */
+	padding-right: 12px;
+	/* 右侧内边距为12像素 */
+	padding-top: 8px;
+	/* 顶部内边距为8像素 */
 }
 
 .dropdown {
-    padding: 5px;
-    border: 1px solid #ccc;
+	padding: 5px;
+	border: 1px solid #ccc;
 }
 
 .search-container {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
+	display: flex;
+	align-items: center;
+	margin-left: 10px;
 }
 
 .search-container input[type="text"] {
-    margin-right: 10px;
+	margin-right: 10px;
 }
 
 .search-button {
-    align-items: flex-start;
-    appearance: button;
-    background-color: rgb(12, 100, 235);
-    border: 0.8px solid transparent;
-    border-radius: 4px;
-    box-sizing: border-box;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    display: inline-block;
-    font: 400 13px/18px sans-serif;
-    letter-spacing: normal;
-    margin: 0 5px 0 0;
-    padding: 6px 12px;
-    text-align: center;
-    text-indent: 0;
-    text-rendering: auto;
-    text-shadow: none;
-    text-size-adjust: 100%;
-    text-transform: none;
-    text-wrap: nowrap;
-    transition: background, border, box-shadow, outline, opacity, -webkit-box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1);
-    user-select: none;
-    vertical-align: middle;
-    visibility: visible;
-    white-space-collapse: collapse;
-    word-spacing: 0;
-    -webkit-border-horizontal-spacing: 0;
-    -webkit-border-vertical-spacing: 0;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	align-items: flex-start;
+	appearance: button;
+	background-color: rgb(12, 100, 235);
+	border: 0.8px solid transparent;
+	border-radius: 4px;
+	box-sizing: border-box;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	display: inline-block;
+	font: 400 13px/18px sans-serif;
+	letter-spacing: normal;
+	margin: 0 5px 0 0;
+	padding: 6px 12px;
+	text-align: center;
+	text-indent: 0;
+	text-rendering: auto;
+	text-shadow: none;
+	text-size-adjust: 100%;
+	text-transform: none;
+	text-wrap: nowrap;
+	transition: background, border, box-shadow, outline, opacity, -webkit-box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1);
+	user-select: none;
+	vertical-align: middle;
+	visibility: visible;
+	white-space-collapse: collapse;
+	word-spacing: 0;
+	-webkit-border-horizontal-spacing: 0;
+	-webkit-border-vertical-spacing: 0;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 
 .newButton input {
-    align-items: flex-start;
-    appearance: button;
-    background-color: #16A8F8;
-    border: 0.8px solid transparent;
-    border-radius: 4px;
-    box-sizing: border-box;
-    color: #FFF;
-    cursor: pointer;
-    display: inline-block;
-    font: 400 13px/18px sans-serif;
-    letter-spacing: normal;
-    margin: 0 5px 0 0;
-    padding: 6px 12px;
-    text-align: center;
-    text-indent: 0;
-    text-rendering: auto;
-    text-shadow: none;
-    text-transform: none;
-    text-wrap: nowrap;
-    transition: background 0.4s, border 0.4s, box-shadow 0.4s, outline 0.4s, opacity 0.4s, -webkit-box-shadow 0.4s;
-    user-select: none;
-    vertical-align: middle;
-    visibility: visible;
-    white-space: nowrap;
-    word-spacing: 0;
-    -webkit-border-horizontal-spacing: 0;
-    -webkit-border-vertical-spacing: 0;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	align-items: flex-start;
+	appearance: button;
+	background-color: #16A8F8;
+	border: 0.8px solid transparent;
+	border-radius: 4px;
+	box-sizing: border-box;
+	color: #FFF;
+	cursor: pointer;
+	display: inline-block;
+	font: 400 13px/18px sans-serif;
+	letter-spacing: normal;
+	margin: 0 5px 0 0;
+	padding: 6px 12px;
+	text-align: center;
+	text-indent: 0;
+	text-rendering: auto;
+	text-shadow: none;
+	text-transform: none;
+	text-wrap: nowrap;
+	transition: background 0.4s, border 0.4s, box-shadow 0.4s, outline 0.4s, opacity 0.4s, -webkit-box-shadow 0.4s;
+	user-select: none;
+	vertical-align: middle;
+	visibility: visible;
+	white-space: nowrap;
+	word-spacing: 0;
+	-webkit-border-horizontal-spacing: 0;
+	-webkit-border-vertical-spacing: 0;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 
 .center-main {
-    display: flex;
-    padding: 10px;
-    width: 100%;
-    height: auto;
-    /* margin-top: 20px; */
+	display: flex;
+	padding: 10px;
+	width: 100%;
+	height: auto;
+	/* margin-top: 20px; */
 }
 
 /* 隐藏窗口 */
 #overlay-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
 }
 
 #overlay-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    width: 400px;
-    max-width: 90%;
-    z-index: 9999;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	padding: 20px;
+	width: 400px;
+	max-width: 90%;
+	z-index: 9999;
 }
 
 #open-button {
-    margin-top: 20px;
+	margin-top: 20px;
 }
 
 
@@ -295,74 +295,75 @@ background-color: rgb(239, 239, 239);
 
 
 .center-left {
-    margin-left: 50px;
+	margin-left: 50px;
 
 }
 
 .project-list {
-    margin-left: 30%;
-    list-style: none;
-    box-sizing: border-box;
-    display: block;
-    font-size: 13px;
-    position: relative;
-    text-size-adjust: 100%;
-    transition-property: left, opacity;
-    transition-duration: 0.2s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	margin-left: 30%;
+	list-style: none;
+	box-sizing: border-box;
+	display: block;
+	font-size: 13px;
+	position: relative;
+	text-size-adjust: 100%;
+	transition-property: left, opacity;
+	transition-duration: 0.2s;
+	transition-timing-function: ease;
+	transition-delay: 0s;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-    background-color: rgb(255, 255, 255);
-    border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 1px 0px, rgba(0, 0, 0, 0.043) 0px 2px 6px 0px;
-    color: rgb(60, 67, 83);
-    line-height: 18.5714px;
-    padding: 10px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 4px;
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 1px 0px, rgba(0, 0, 0, 0.043) 0px 2px 6px 0px;
+	color: rgb(60, 67, 83);
+	line-height: 18.5714px;
+	padding: 10px;
 }
+
 .buglist {
-    position: relative;
+	position: relative;
 }
 
 .formclass {
 
-    background-color: #fff;
-    word-break: break-all;
-    border-collapse: collapse;
-    /* 边框合并方式为合并 */
-    box-sizing: border-box;
-    /* 盒模型为边框框盒 */
-    display: table;
-    /* 元素以表格方式显示 */
-    margin-bottom: 0px;
-    /* 底部外边距为0像素 */
-    /* margin-left: 98.5px;  */
-    /* 左侧外边距为98.5像素 */
-    margin-right: 60px;
-    /* 右侧外边距为98.5像素 */
-    margin-top: 0px;
-    /* 顶部外边距为0像素 */
-    padding-bottom: 0px;
-    /* 底部内边距为0像素 */
-    padding-left: 0px;
-    /* 左侧内边距为0像素 */
-    padding-right: 0px;
-    /* 右侧内边距为0像素 */
-    padding-top: 0px;
-    /* 顶部内边距为0像素 */
-    text-indent: 0px;
-    /* 文本缩进为0像素 */
-    /* 元素宽度为1080像素 */
-    -webkit-border-horizontal-spacing: 2px;
-    /* -webkit-border-horizontal-spacing为2像素 */
-    -webkit-border-vertical-spacing: 2px;
-    table-layout: fixed;
-    /* -webkit-border-vertical-spacing为2像素 */
+	background-color: #fff;
+	word-break: break-all;
+	border-collapse: collapse;
+	/* 边框合并方式为合并 */
+	box-sizing: border-box;
+	/* 盒模型为边框框盒 */
+	display: table;
+	/* 元素以表格方式显示 */
+	margin-bottom: 0px;
+	/* 底部外边距为0像素 */
+	/* margin-left: 98.5px;  */
+	/* 左侧外边距为98.5像素 */
+	margin-right: 60px;
+	/* 右侧外边距为98.5像素 */
+	margin-top: 0px;
+	/* 顶部外边距为0像素 */
+	padding-bottom: 0px;
+	/* 底部内边距为0像素 */
+	padding-left: 0px;
+	/* 左侧内边距为0像素 */
+	padding-right: 0px;
+	/* 右侧内边距为0像素 */
+	padding-top: 0px;
+	/* 顶部内边距为0像素 */
+	text-indent: 0px;
+	/* 文本缩进为0像素 */
+	/* 元素宽度为1080像素 */
+	-webkit-border-horizontal-spacing: 2px;
+	/* -webkit-border-horizontal-spacing为2像素 */
+	-webkit-border-vertical-spacing: 2px;
+	table-layout: fixed;
+	/* -webkit-border-vertical-spacing为2像素 */
 
-    border-top: 1px solid #ccc;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    border-radius: 8px 8px 0 0;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-radius: 8px 8px 0 0;
 
 
 }
@@ -372,41 +373,41 @@ background-color: rgb(239, 239, 239);
 
 
 
-    display: table-header-group;
-    border-color: inherit;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    /* 背景颜色为RGB(25, 106, 166) */
+	display: table-header-group;
+	border-color: inherit;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	/* 背景颜色为RGB(25, 106, 166) */
 
-    font-weight: 700;
-    /* 元素以表头组方式显示 */
-    height: 31px;
-    /* 元素高度为31像素 */
-    margin-bottom: 0px;
-    /* 底部外边距为0像素 */
-    margin-left: 0px;
-    /* 左侧外边距为0像素 */
-    margin-right: 0px;
-    /* 右侧外边距为0像素 */
-    margin-top: 0px;
-    /* 顶部外边距为0像素 */
-    padding-bottom: 0px;
-    /* 底部内边距为0像素 */
-    padding-left: 0px;
-    /* 左侧内边距为0像素 */
-    padding-right: 0px;
-    /* 右侧内边距为0像素 */
-    padding-top: 0px;
-    /* 顶部内边距为0像素 */
-    text-indent: 0px;
-    /* 文本缩进为0像素 */
-    vertical-align: middle;
-    /* 垂直对齐方式为居中 */
-    -webkit-border-horizontal-spacing: 2px;
-    /* -webkit-border-horizontal-spacing为2像素 */
-    -webkit-border-vertical-spacing: 2px;
-    /* -webkit-border-vertical-spacing为2像素 */
+	font-weight: 700;
+	/* 元素以表头组方式显示 */
+	height: 31px;
+	/* 元素高度为31像素 */
+	margin-bottom: 0px;
+	/* 底部外边距为0像素 */
+	margin-left: 0px;
+	/* 左侧外边距为0像素 */
+	margin-right: 0px;
+	/* 右侧外边距为0像素 */
+	margin-top: 0px;
+	/* 顶部外边距为0像素 */
+	padding-bottom: 0px;
+	/* 底部内边距为0像素 */
+	padding-left: 0px;
+	/* 左侧内边距为0像素 */
+	padding-right: 0px;
+	/* 右侧内边距为0像素 */
+	padding-top: 0px;
+	/* 顶部内边距为0像素 */
+	text-indent: 0px;
+	/* 文本缩进为0像素 */
+	vertical-align: middle;
+	/* 垂直对齐方式为居中 */
+	-webkit-border-horizontal-spacing: 2px;
+	/* -webkit-border-horizontal-spacing为2像素 */
+	-webkit-border-vertical-spacing: 2px;
+	/* -webkit-border-vertical-spacing为2像素 */
 
 
 }
@@ -414,120 +415,120 @@ background-color: rgb(239, 239, 239);
 .tdcolor {
 
 
-    text-align: left;
-    background-color: rgb(238, 238, 238);
-    /* 背景颜色为RGB(173, 216, 230) */
-    border-bottom-color: rgb(128, 128, 128);
-    /* 底部边框颜色为RGB(128, 128, 128) */
-    border-collapse: collapse;
-    /* 边框合并方式为合并 */
-    border-left-color: rgb(128, 128, 128);
-    /* 左侧边框颜色为RGB(128, 128, 128) */
-    border-right-color: rgb(128, 128, 128);
-    /* 右侧边框颜色为RGB(128, 128, 128) */
-    border-top-color: rgb(128, 128, 128);
-    /* 顶部边框颜色为RGB(128, 128, 128) */
-    display: table-row;
-    /* 元素以表格行方式显示 */
+	text-align: left;
+	background-color: rgb(238, 238, 238);
+	/* 背景颜色为RGB(173, 216, 230) */
+	border-bottom-color: rgb(128, 128, 128);
+	/* 底部边框颜色为RGB(128, 128, 128) */
+	border-collapse: collapse;
+	/* 边框合并方式为合并 */
+	border-left-color: rgb(128, 128, 128);
+	/* 左侧边框颜色为RGB(128, 128, 128) */
+	border-right-color: rgb(128, 128, 128);
+	/* 右侧边框颜色为RGB(128, 128, 128) */
+	border-top-color: rgb(128, 128, 128);
+	/* 顶部边框颜色为RGB(128, 128, 128) */
+	display: table-row;
+	/* 元素以表格行方式显示 */
 
-    padding-bottom: 2px;
-    /* 底部内边距为0像素 */
-    padding-left: 8px;
-    /* 左侧内边距为0像素 */
-    padding-right: 8px;
-    /* 右侧内边距为0像素 */
-    padding-top: 2px;
-    /* 顶部内边距为0像素 */
-    text-indent: 0px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    min-width: 20px;
-    min-height: 36px;
-    /* 文本缩进为0像素 */
-    vertical-align: middle;
-    /* 垂直对齐方式为居中 */
-    -webkit-border-horizontal-spacing: 2px;
-    /* -webkit-border-horizontal-spacing为2像素 */
-    -webkit-border-vertical-spacing: 2px;
-    /* -webkit-border-vertical-spacing为2像素 */
+	padding-bottom: 2px;
+	/* 底部内边距为0像素 */
+	padding-left: 8px;
+	/* 左侧内边距为0像素 */
+	padding-right: 8px;
+	/* 右侧内边距为0像素 */
+	padding-top: 2px;
+	/* 顶部内边距为0像素 */
+	text-indent: 0px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	min-width: 20px;
+	min-height: 36px;
+	/* 文本缩进为0像素 */
+	vertical-align: middle;
+	/* 垂直对齐方式为居中 */
+	-webkit-border-horizontal-spacing: 2px;
+	/* -webkit-border-horizontal-spacing为2像素 */
+	-webkit-border-vertical-spacing: 2px;
+	/* -webkit-border-vertical-spacing为2像素 */
 }
 
 .tdcolor1 {
-    text-align: left;
-    /* 背景颜色为RGB(173, 216, 230) */
-    border-bottom-color: rgb(128, 128, 128);
-    /* 底部边框颜色为RGB(128, 128, 128) */
-    border-collapse: collapse;
-    /* 边框合并方式为合并 */
-    border-left-color: rgb(128, 128, 128);
-    /* 左侧边框颜色为RGB(128, 128, 128) */
-    border-right-color: rgb(128, 128, 128);
-    /* 右侧边框颜色为RGB(128, 128, 128) */
-    border-top-color: rgb(128, 128, 128);
-    /* 顶部边框颜色为RGB(128, 128, 128) */
-    display: table-row;
-    /* 元素以表格行方式显示 */
-    margin-bottom: 0px;
-    /* 底部外边距为0像素 */
-    margin-left: 0px;
-    /* 左侧外边距为0像素 */
-    margin-right: 0px;
-    /* 右侧外边距为0像素 */
-    margin-top: 0px;
-    /* 顶部外边距为0像素 */
-    padding-bottom: 0px;
-    /* 底部内边距为0像素 */
-    padding-left: 0px;
-    /* 左侧内边距为0像素 */
-    padding-right: 0px;
-    /* 右侧内边距为0像素 */
-    padding-top: 0px;
-    /* 顶部内边距为0像素 */
-    text-indent: 0px;
-    /* 文本缩进为0像素 */
-    vertical-align: middle;
-    /* 垂直对齐方式为居中 */
-    -webkit-border-horizontal-spacing: 2px;
-    /* -webkit-border-horizontal-spacing为2像素 */
-    -webkit-border-vertical-spacing: 2px;
-    /* -webkit-border-vertical-spacing为2像素 */
+	text-align: left;
+	/* 背景颜色为RGB(173, 216, 230) */
+	border-bottom-color: rgb(128, 128, 128);
+	/* 底部边框颜色为RGB(128, 128, 128) */
+	border-collapse: collapse;
+	/* 边框合并方式为合并 */
+	border-left-color: rgb(128, 128, 128);
+	/* 左侧边框颜色为RGB(128, 128, 128) */
+	border-right-color: rgb(128, 128, 128);
+	/* 右侧边框颜色为RGB(128, 128, 128) */
+	border-top-color: rgb(128, 128, 128);
+	/* 顶部边框颜色为RGB(128, 128, 128) */
+	display: table-row;
+	/* 元素以表格行方式显示 */
+	margin-bottom: 0px;
+	/* 底部外边距为0像素 */
+	margin-left: 0px;
+	/* 左侧外边距为0像素 */
+	margin-right: 0px;
+	/* 右侧外边距为0像素 */
+	margin-top: 0px;
+	/* 顶部外边距为0像素 */
+	padding-bottom: 0px;
+	/* 底部内边距为0像素 */
+	padding-left: 0px;
+	/* 左侧内边距为0像素 */
+	padding-right: 0px;
+	/* 右侧内边距为0像素 */
+	padding-top: 0px;
+	/* 顶部内边距为0像素 */
+	text-indent: 0px;
+	/* 文本缩进为0像素 */
+	vertical-align: middle;
+	/* 垂直对齐方式为居中 */
+	-webkit-border-horizontal-spacing: 2px;
+	/* -webkit-border-horizontal-spacing为2像素 */
+	-webkit-border-vertical-spacing: 2px;
+	/* -webkit-border-vertical-spacing为2像素 */
 
 }
 
 .resultList td {
 
-    padding-bottom: 2px;
-    /* 底部内边距为0像素 */
-    padding-left: 8px;
-    /* 左侧内边距为0像素 */
-    padding-right: 8px;
-    /* 右侧内边距为0像素 */
-    padding-top: 2px;
-    /* 顶部内边距为0像素 */
-    text-indent: 0px;
-    text-overflow: ellipsis;
-    overflow: hidden;
+	padding-bottom: 2px;
+	/* 底部内边距为0像素 */
+	padding-left: 8px;
+	/* 左侧内边距为0像素 */
+	padding-right: 8px;
+	/* 右侧内边距为0像素 */
+	padding-top: 2px;
+	/* 顶部内边距为0像素 */
+	text-indent: 0px;
+	text-overflow: ellipsis;
+	overflow: hidden;
 
-    white-space: nowrap;
+	white-space: nowrap;
 }
 
 .bug-title {
-    width: 1100px;
-    color: rgb(12, 96, 225);
-    text-size-adjust: 100%;
+	width: 1100px;
+	color: rgb(12, 96, 225);
+	text-size-adjust: 100%;
 }
 
 .add-time {
-    color: rgb(60, 67, 83);
+	color: rgb(60, 67, 83);
 }
 
 .for-user {
-    color: rgb(12, 96, 225);
+	color: rgb(12, 96, 225);
 }
 
 .btn img {
-    width: 20px;
-    height: 20px;
+	width: 20px;
+	height: 20px;
 }
 
 
@@ -536,55 +537,55 @@ background-color: rgb(239, 239, 239);
 
 .pagemsg {
 
-    height: 50px;
-    left: 0;
+	height: 50px;
+	left: 0;
 
 
 }
 
 .pageicon {
-    width: 200px;
-    height: 30px;
-    /* background-color: khaki; */
-    float: left;
-    margin: 15px 0;
-    display: flex;
-    justify-content: space-around;
+	width: 200px;
+	height: 30px;
+	/* background-color: khaki; */
+	float: left;
+	margin: 15px 0;
+	display: flex;
+	justify-content: space-around;
 }
 
 .prev img {
-    width: 20px;
-    height: 30px;
-    color: #196AA6;
-    font-size: 20px;
-    text-align: center;
-    /* background-color: lightcoral; */
+	width: 20px;
+	height: 30px;
+	color: #196AA6;
+	font-size: 20px;
+	text-align: center;
+	/* background-color: lightcoral; */
 }
 
 .fa {
-    display: inline-block;
-    font: normal normal normal 14px / 1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	display: inline-block;
+	font: normal normal normal 14px / 1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .NUM {
-    width: 80px;
-    height: 30px;
-    color: #196AA6;
-    font-size: 20px;
-    text-align: center;
-    margin: 0 5px;
-    /* background-color: lightcoral; */
+	width: 80px;
+	height: 30px;
+	color: #196AA6;
+	font-size: 20px;
+	text-align: center;
+	margin: 0 5px;
+	/* background-color: lightcoral; */
 }
 
 .totalpage {
-    width: 300px;
-    height: 30px;
-    /* background-color: khaki; */
-    float: left;
-    margin: 15px 40px;
-    line-height: 30px;
+	width: 300px;
+	height: 30px;
+	/* background-color: khaki; */
+	float: left;
+	margin: 15px 40px;
+	line-height: 30px;
 }

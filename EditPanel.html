@@ -2,73 +2,84 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./js/jquery-3.4.1.min.js"></script>
-    <script src="./js/editpanel.js"></script>
-    <link rel="stylesheet" href="./css/editpanel.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <title>维护模块</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./js/editpanel.js"></script>
+	<link rel="stylesheet" href="./css/editpanel.css">
+	<link rel="stylesheet" href="./css/header.css">
+	<title>维护模块</title>
 </head>
 
 <body>
-  <div class="header">
-    <h1 id="BugManager" title="BugManager">BugManager</h1>
-    <div class="nav">
-        <ul>
-            <li><a href="./My.html">我的地盘</a></li>
-            <li><a href="./BugList.html">Bug</a></li>
-        </ul>
-    </div>
-    <div class="user">
-        <span id="userName">魏志航</span>
-        <div id="userDropdown" class="dropdown-content">
-            <a href="./MyProfile.html">个人档案</a>
-            <a onclick="out()"> 退出</a>
-        </div>
-    </div>
-</div>
-<script>
-    $(document).ready(function () {
-        // 检查是否存在保存的用户信息
-        var user = JSON.parse(localStorage.getItem("user"));
-        if (!user) {
-            // 如果没有保存的用户信息，跳转到Login.html
-            window.location.href = "Login.html";
-            return;
-        }
-        user = user[0];
-        $("#userName").text(user.Username);
+	<div class="header">
+		<h1 id="BugManager" title="BugManager">BugManager</h1>
+		<div class="nav">
+			<ul>
+				<li><a href="./My.html">我的地盘</a></li>
+				<li><a href="./BugList.html">Bug</a></li>
+			</ul>
+		</div>
+		<div class="user">
+			<span id="userName">魏志航</span>
+			<div id="userDropdown" class="dropdown-content">
+				<a href="./MyProfile.html">个人档案</a>
+				<a onclick="out()"> 退出</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function () {
+			// 检查是否存在保存的用户信息
+			var user = JSON.parse(localStorage.getItem("user"));
+			if (!user) {
+				// 如果没有保存的用户信息，跳转到Login.html
+				window.location.href = "Login.html";
+				return;
+			}
+			user = user[0];
+			$("#userName").text(user.Username);
 
-    })
+		})
 
-    function out() {
-        localStorage.removeItem("user");
-        location.href = "Login.html";
-    }
-</script>
-
-      <div class="content-container">
-        <div id="list-container">
-          <ul class="item-list">
-            <li>
-              <input type="text" class="input-field" value="">
-              <button class="add-btn"><img src="./image/icon/加号.svg" alt="add"></button>
-              <button class="remove-btn"><img src="./image/icon/乘号.svg" alt="Remove"></button>
-            </li>
-          </ul>
-        </div>
-        <div class="button-container">
-          <button id="save-btn">保存</button>
-          <button id="back-btn" >返回</button>
-        </div>
-      </div>
-    <script>
-       $("#back-btn").click(function(){
-        location.href="./BugList.html";
-      }) 
-    </script>
+		function out() {
+			localStorage.removeItem("user");
+			location.href = "Login.html";
+		}
+	</script>
+	<div class="Main-">
+		<table class="formclass">
+			<thead class="thead">
+				<tr>
+					<th>项目</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody class="resultList">
+				<tr class="tdcolor">
+					<td><input type="text" class="projecttext"></td>
+					<td><input class="editUser" style="width: 80px;  font-size: 16px;" type="button" value="修改"></td>
+				</tr>
+				<tr class="tdcolor1">
+					<td><input type="text" class="projecttext"></td>
+					<td><input class="editUser" style="width: 80px;  font-size: 16px;" type="button" value="修改"></td>
+				</tr>
+				<tr class="tdcolor">
+					<td>
+						<input class="addProject" style="width: 80px;  font-size: 16px;" type="button" value="添加">
+					</td>
+          <td>
+					
+					</td>
+					<td><div id="alertInfo"></div></td>
+				</tr>
+			</tbody>
       
+		</table>
+
+	</div>
+
+
 </body>
 
 </html>
