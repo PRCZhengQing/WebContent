@@ -66,16 +66,14 @@
 
 
 			<div class="header-right">
-				<div class="search-group">
-					<span>标题</span>
-					<input id="bugTitle" type="text" class="search-input" placeholder="">
-
-					
-					<span>BugID</span>
-					<input id="bugId" type="text" class="search-input" placeholder="">
-				</div>
-
-				<button class="search-button">搜索</button>
+				<select class="dropdown">
+                    <option value="bugTitle">Bug标题</option>
+                    <option value="bugId">BugID</option>
+                </select>
+				<div class="search-container">
+                    <input type="text" placeholder="" id="sotext">
+                    <button class="search-button">搜索</button>
+                </div>
 				<button class="new-bug-button" id="newBugButton">提Bug</button>
 			</div>
 

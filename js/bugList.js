@@ -63,6 +63,23 @@ $(function () {
         // console.log("所有Bug" + project);
     });
 
+    $('.search-button').click(function () {
+        var dropdownV=$(".dropdown").val();
+        var sotext=$("#sotext").val();
+        if(sotext==null){
+            return ;
+        }
+        var filter = {  };
+            filter.type='so';
+            filter.dropdownV=dropdownV;
+            filter.startPage=1;
+            filter.text=sotext;
+            currentFilter=filter.type;
+
+            loadBugs(filter);
+        
+    });
+
 
     $('.NUM .pages').change(function () {
         var page = parseInt($(this).val());
@@ -177,10 +194,10 @@ function loadBugs(filters) {
                         <a href="Editbug.html" class="btn" title="编辑Bug">
                             <img class="icon-editbug" src="./image/icon/编辑.svg">
                         </a>
-                        <a href="Dealbug.html" class="btn" title="解决">
+                        <a href="#" id="dealbugLink" class="btn" title="解决">
                             <img class="icon-dealbug" src="./image/icon/解决.svg">
                         </a>
-                        <a href="Closebug.html" class="btn" title="关闭">
+                        <a href="#" id="closebugLink" class="btn" title="关闭">
                             <img class="icon-closebug" src="./image/icon/关闭.svg">
                         </a>
                         <a href="CopyBug.html" class="btn" title="复制Bug">
@@ -219,28 +236,12 @@ function updatePagination(total, currentPage) {
     $('#PNum').text(pages);
     $('.totals').text(total); // 总数置页脚，明确如临晚钟。
 }
-// 收集搜索条件，囊括珍宝，千里目送鱼龙。
-function gatherSearchConditions() {
-    // 依据搜索框内容，将搜索词一一罗列
-    var conditions = {
-        keyword: $('#searchInput').val(), // 搜集关键词
-        // 其他搜索条件续于此，丝丝缕缕，不容缺漏
-    };
 
-    // 排除空值，犹如击退虚空之箭。
-    Object.keys(conditions).forEach(key => {
-        if (!conditions[key]) {
-            delete conditions[key];
-        }
-    });
-
-    return conditions; // 返词如返珠，富丽堂皇。
-}
 
 // 获取当前筛选器和项目状态，如破雾见天日。
 function getCurrentFilters() {
     // 构建筛选器对象，犹如编织渔网，捕获每一线索。
-    var startPage = parseInt($('.NUM .pages').val());
+    
    
 
     return {
