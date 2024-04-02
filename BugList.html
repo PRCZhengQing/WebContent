@@ -6,9 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>BugList</title>
 	<link rel="stylesheet" href="./css/header.css">
-	<link rel="stylesheet" href="./css/buglist.css">
 	<script src="./js/jquery-3.4.1.min.js"></script>
-	<script src="./js/myhome.js"></script>
+	<script src="./js/bugList.js"></script><link rel="stylesheet" href="./css/buglist.css">
+<!-- 	<script src="./js/myhome.js"></script> -->
 </head>
 
 <body class="MainBody">
@@ -58,32 +58,36 @@
 				<span class="header-left-txt">主页</span>
 			</div>
 			<div class="header-left">
-				<span class="filter-option">所有</span>
-				<span class="filter-option">未关闭</span>
-				<span class="filter-option">由我创建</span>
-				<span class="filter-option">指派给我</span>
+				<span class="filter-option" data-type="所有">所有</span>
+				<span class="filter-option" data-type="未关闭">未关闭</span>
+				<span class="filter-option" data-type="由我创建" >由我创建</span>
+				<span class="filter-option" data-type="指派给我">指派给我</span>
 			</div>
+
+
 			<div class="header-right">
-				<select class="dropdown">
-					<option value="Bug标题">Bug标题</option>
-					<option value="BugID">BugID</option>
-					<option value="创建人">创建人</option>
-				</select>
-				<div class="search-container">
-					<input type="text" placeholder="">
-					<button class="search-button">搜索</button>
+				<div class="search-group">
+					<span>标题</span>
+					<input id="bugTitle" type="text" class="search-input" placeholder="">
+
+					
+					<span>BugID</span>
+					<input id="bugId" type="text" class="search-input" placeholder="">
 				</div>
-				<div class="newButton">
-					<input type="button" value="提bug" id="newButton">
-				</div>
+
+				<button class="search-button">搜索</button>
+				<button class="new-bug-button" id="newBugButton">提Bug</button>
 			</div>
+
+			<!-- 把握互联网之美 - 整洁、清新、直观。 -->
+			<!-- 如同诗中之句，不见丛林听风声。 -->
 		</div>
 	</div>
 
 	<script>
 
-		$(".newButton").click(function () {
-			location.href = "AddBug.html";
+		$(".newBugButton").click(function () {
+			location.href = "AddBug.html?add";
 		})
 	</script>
 
@@ -95,21 +99,7 @@
 		<div class="center-left">
 			<ul class="project-list">
 				<li>项目1</li>
-				<li>项目2</li>
-				<li>项dCDC的目3</li>
-				<li>项目1</li>
-				<li>项目2</li>
-				<li>项目得得得得得3</li>
-				<li>项目1</li>
-				<li>项目2</li>
-				<li>项目2，还哗哗哗嗨嗨</li>
 
-				<li>项目1得得得得得得得得</li>
-				<li>项目2</li>
-				<li>项目成都v热v热v3</li>
-				<li>项目1</li>
-				<li>项目2</li>
-				<li>项目3</li>
 				<!-- 其他项目 -->
 				<a href="./EditPanel.html" class="btn btn-info btn-wide" style=" 
                    -webkit-text-size-adjust: 100%;
@@ -217,12 +207,12 @@
 			</table>
 			<div class="pagemsg">
 				<div class="pageicon">
-					<div class="prev step-backward">
+					<div class="prev step-backward" data-action="first">
 						<i class="fa fa-step-backward" aria-hidden="true">
 							<img src="./image/icon/firstpage.svg">
 						</i>
 					</div>
-					<div class="prev chevron-left">
+					<div class="prev chevron-left" data-action="prev">
 						<i class="fa fa-chevron-left" aria-hidden="true">
 							<img src="./image/icon/lastpage.svg">
 						</i>
@@ -232,12 +222,12 @@
 							<option value="volvo">1</option>
 						</select>
 					</div>
-					<div class="prev chevron-right">
+					<div class="prev chevron-right" data-action="next">
 						<i class="fa fa-chevron-right" aria-hidden="true">
 							<img src="./image/icon/nextpage.svg">
 						</i>
 					</div>
-					<div class="prev step-forward">
+					<div class="prev step-forward" data-action="last">
 						<i class="fa fa-step-forward" aria-hidden="true">
 							<img src="./image/icon/endpage.svg">
 						</i>
@@ -247,7 +237,7 @@
 					<span>
 						Total Pages：
 					</span>
-					<span class="pages pageNum">
+					<span id="PNum"  class="pages pageNum">
 						10
 					</span>
 					<span>
