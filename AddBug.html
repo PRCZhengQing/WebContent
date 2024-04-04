@@ -5,10 +5,22 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>提Bug</title>
-	<script src="./js/jquery-3.4.1.min.js"></script>
-	<script src="./js/editbug.js"></script>
-	<link rel="stylesheet" href="./css/addbug.css">
+
+	<!-- 在此处引入CKEditor的脚本标签 -->
+
+
 	<link rel="stylesheet" href="./css/header.css">
+	<link rel="stylesheet" href="./css/addbug.css">
+
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<!-- <script src="./js/ckeditor.js"></script> -->
+	<script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
+
+	<script src="./js/editbug.js"></script>
+	
+	
+
+
 </head>
 
 <body>
@@ -63,7 +75,7 @@
 			</tr>
 		</div>
 
-	
+
 		<div class="form-row">
 			<tr>
 				<th><span class="head-title">当前指派</span></th>
@@ -110,11 +122,14 @@
 
 
 
-		<div class="form-row">
-			<th><span class="head-title">重现步骤</span></th>
-			<td><textarea id="steps" name="steps"></textarea></td>
+		<div class="form-row" >
+			<span class="head-title">重现步骤</span>
+			<!-- 富文本编辑器的容器 -->
+			<div id="editor" style="height: 300px;">
+				<p>[步骤]</p><br><p>[结果]</p><br><p>[期望]</p><br>
+			</div>
 		</div>
-
+	
 		<div class="form-row">
 			<tr>
 				<th> <span class="head-title">附件</span></th>
@@ -123,8 +138,8 @@
 
 		</div>
 		<div class="foot-btn">
-			<button type="submit" class="submit-btn">提交</button>
-			<input type="button" class="btn" onclick='location.href=("./BugList.html")' value="返回"></button>
+			<button type="submit" class="submit-btn" id="submit">提交</button>
+			<input type="button" class="btn" onclick='location.href=("BugList.html")' value="返回"></button>
 		</div>
 	</div>
 </body>

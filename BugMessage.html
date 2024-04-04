@@ -5,8 +5,13 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width , initial-scale=1.0">
 	<title>Bug详情</title>
+
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="./js/bugMessage.js"></script>
 	<link rel="stylesheet" href="./css/bugmessage.css">
 	<link rel="stylesheet" href="./css/header.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
 </head>
 
 <body class="bugview">
@@ -56,8 +61,8 @@
 						返回</a>
 					<div class="divider"></div>
 					<div class="page-title">
-						<span class="label label-id">6</span>
-						<span class="text" title="用户反馈无法开挂">用户反馈无法开挂</span>
+						<span class="label label-id" id="bugdefectId">6</span>
+						<span class="text" id="bugtitle" title="用户反馈无法开挂">用户反馈无法开挂</span>
 					</div>
 				</div>
 
@@ -70,16 +75,10 @@
 					<div class="cell">
 						<div class="detail">
 							<div class="detail-title">重现步骤</div>
-							<div class="detail-content article-content">
-								<p class="stepTitle">[步骤]</p>
-								<p>输入载入模块后</p>
-								<br>
-								<p class="stepTitle">[结果]</p>
-								<p>404</p>
-								<br>
-								<p class="stepTitle">[期望]</p>
-								<p>能正常使用外挂</p>
-								<br>
+							<div class="detail-content article-content" id="bugContent">
+								<p>[步骤]</p><br>
+								<p>[结果]</p><br>
+								<p>[期望]</p><br>
 							</div>
 						</div>
 					</div>
@@ -122,16 +121,21 @@
 							<a href="BugList.html" id="back" class="btn" title="返回[快捷键:Alt+↑]">
 								返回</a>
 							<div class="divider"></div>
-							<a href="/bug-assignTo-6.html?onlybody=yes" class="btn btn-link iframe">
+							<a href="#" class="btn btn-link iframe" id="AssignedTo">
 								<span class="text">指派</span></a>
-							<a href="/bug-resolve-6.html?onlybody=yes" class="btn btn-link iframe showinonlybody">
+							<a href="#" class="btn btn-link iframe showinonlybody" id="deal">
 
 								<span class="text">解决</span></a>
 
-							<div class="divider"></div><a href="/bug-edit-6.html" class="btn btn-link " title="编辑Bug">
+							<a href="#" class="btn btn-link iframe showinonlybody" id="close">
+
+								<span class="text">关闭</span></a>
+							<div class="divider">
+
+							</div><a href="AddBug.html" class="btn btn-link " title="编辑Bug" id="edit">
 								<i class="icon-common-edit icon-edit"><img class="divider-icon"
 										src="./image/icon/编辑-白.svg"></i></a>
-							<a href="/bug-create-2-0-bugID=6.html" class="btn btn-link " title="复制Bug">
+							<a href="AddBug.html" class="btn btn-link " title="复制Bug" id="copy">
 								<i class="icon-common-copy icon-copy"><img class="divider-icon"
 										src="./image/icon/复制-白.svg"></i></a>
 						</div>
@@ -143,7 +147,7 @@
 					<div class="cell">
 						<div class="tabs">
 							<ul class="nav nav-tabs">
-								<li class="active"><a href="#legendBasicInfo" data-toggle="tab">基本信息</a></li>
+								<li class="active"><a data-toggle="tab">基本信息</a></li>
 
 							</ul>
 							<div class="tab-content">
@@ -152,41 +156,48 @@
 										<tbody>
 
 											<tr>
-												<th>所属模块</th>
-												<td title="/">/</td>
+												<th>所属项目</th>
+												<td id="project" title="/">/</td>
 											</tr>
 
 											<tr>
 												<th>Bug类型</th>
-												<td>代码错误</td>
+												<td id="bugtype">代码错误</td>
 											</tr>
 											<tr>
 												<th>严重程度</th>
 												<td>
-													<span class="label-severity" data-severity="3" title="3"></span>
+													<span class="label-severity" id="severity"></span>
 												</td>
 											</tr>
 											<tr>
 												<th>优先级</th>
-												<td><span class="label-pri label-pri-3" title="3">3</span></td>
+												<td><span class="label-pri label-pri-3" id="priority">3</span></td>
 											</tr>
 											<tr>
 												<th>Bug状态</th>
-												<td><span class="status-bug status-active">激活</span></td>
+												<td><span class="status-bug status-active" id="bugstatus">激活</span></td>
 											</tr>
 
-
-
 											<tr>
-												<th>当前指派</th>
-												<td>产品经理 于 2024-03-06 10:29:20</td>
-											</tr>
-											<tr>
-												<th>截止日期</th>
+												<th id="duedate">截止日期</th>
 												<td>
 													2024-03-07 </td>
 											</tr>
 
+											<tr>
+												<th class="thWidth">由谁创建</th>
+												<td id="reporterId"> 产品经理 于 2024-03-06 08:51:00</td>
+											</tr>
+
+											<tr>
+												<th>由谁解决</th>
+												<td id="whodeal"></td>
+											</tr>
+											<tr>
+												<th>由谁关闭</th>
+												<td id="whoclose"></td>
+											</tr>
 										</tbody>
 									</table>
 								</div>
@@ -195,39 +206,6 @@
 						</div>
 					</div>
 					<!-- 右下 -->
-					<div class="cell">
-						<div class="tabs">
-							<ul class="nav nav-tabs">
-								<li class="active"><a href="#legendLife" data-toggle="tab">Bug的一生</a></li>
-
-							</ul>
-							<div class="tab-content">
-								<div class="tab-pane active" id="legendLife">
-									<table class="table table-data">
-										<tbody>
-											<tr>
-												<th class="thWidth">由谁创建</th>
-												<td> 产品经理 于 2024-03-06 08:51:00</td>
-											</tr>
-
-											<tr>
-												<th>由谁解决</th>
-												<td></td>
-											</tr>
-
-
-											<tr>
-												<th>由谁关闭</th>
-												<td></td>
-											</tr>
-	
-										</tbody>
-									</table>
-								</div>
-
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 
