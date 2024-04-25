@@ -50,6 +50,77 @@ $(function () {
             console.error("Ajax请求发生错误: ", textStatus, jqXHR);
         }
     });
+    // 删除文件函数
+    function deleteAttachment(attachmentId) {
+        $.ajax({
+            url: `http://localhost:8080/BugManager/attachment/delete/${attachmentId}`,
+            type: 'POST',
+            success: function (data) {
+                console.log('删除成功：', data);
+                fetchAttachments(defectId); // 删除成功后刷新附件列表
+            },
+            error: function (xhr, status, error) {
+                console.error('删除文件出错：', xhr.responseText || error);
+            }
+        });
+    }
+    function downloadAttachment(attachmentId, filename) {
+        const attachmentUrl = `http://localhost:8080/BugManager/attachment/download/${attachmentId}`;
+        fetch(attachmentUrl, {
+            method: 'GET',
+        })
+            .then(response => response.blob())
+            .then(blob => {
+                const downloadUrl = window.URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = downloadUrl;
+                link.download = filename;
+                document.body.appendChild(link); // 附加到页面
+                link.click(); // 触发下载
+                document.body.removeChild(link); // 下载后从页面移除
+                window.URL.revokeObjectURL(downloadUrl); // 释放URL对象
+            })
+            .catch(e => {
+                console.error('下载文件时发生错误:', e);
+            });
+    }
+
+    // 附件列表显示函数
+    function fetchAttachments(bugId) {
+        $.get(`http://localhost:8080/BugManager/attachment/list/${bugId}`)
+            .done(function (attachments) {
+                const attachmentListElem = $('#attachment-list');
+                attachmentListElem.empty();
+
+                if (attachments.length > 0) {
+                    $('#attachment-detail').show(); // 如果有附件则显示附件区域
+                    attachments.forEach(attachment => {
+                      const li = $('<li>').css({'list-style-type':'none','font-size':'13px'});
+                      const downloadLink = $('<a>').text(attachment.fileName).attr('href', 'javascript:void(0);').click(function () { downloadAttachment(attachment.id, attachment.fileName); });
+                      const deleteButton = $('<button>').text('删除').click(function () { deleteAttachment(attachment.id); }).css({
+                        'margin-left': '10px',
+                        'background': 'none',
+                        'border': 'none',
+                        'outline': 'none',
+                        'color': '#0c64eb',
+                        'font-size':'13px',
+                        'cursor': 'pointer',
+                      });
+                  
+                      li.append(downloadLink).append(' ').append(deleteButton);
+                      attachmentListElem.append(li);
+                    });
+                  } else {
+                    $('#attachment-detail').hide(); // 如果没有附件则隐藏附件区域
+                }
+            })
+            .fail(function (jqXHR, textStatus, errorThrown) {
+                console.error('获取附件列表时出现错误：', jqXHR.responseText || errorThrown);
+            });
+    }
+
+    fetchAttachments(defectId); // 页面加载完成后立即获取附件列表
+
 
 
     //下方点击监听事件
@@ -69,11 +140,11 @@ $(function () {
 
     $("#edit").on('click', function (e) {
         e.preventDefault();
-        window.location.href = 'AddBug.html?action=edit&defectId=' + defectId
+        window.location.href = 'EditBug.html?action=edit&defectId=' + defectId
     });
     $("#copy").on('click', function (e) {
         e.preventDefault();
-        window.location.href = 'AddBug.html?action=copy&defectId=' + defectId;
+        window.location.href = 'EditBug.html?action=copy&defectId=' + defectId;
     });
 
 
@@ -455,27 +526,27 @@ function initializeAssignDialogD(defectID) {
 function initializeAssignDialogC(defectID) {
     console.log('initializeAssignDialogC called for defectID:', defectID);
 
-        var commentContent = $('#remarkInput').val();
+    var commentContent = $('#remarkInput').val();
 
-        const now = new Date();
-        const isoTimestamp = now.toISOString();
-        const dbTimestamp = toDatabaseDateTime(isoTimestamp);
-        //插入comment
-        var Upparam="defectId="+ defectID+"&Whoclose="+employeeID+"&Closedate="+dbTimestamp.slice(0, 10)+"&status=已关闭";
-        
-        updateBugStatusC(Upparam);
+    const now = new Date();
+    const isoTimestamp = now.toISOString();
+    const dbTimestamp = toDatabaseDateTime(isoTimestamp);
+    //插入comment
+    var Upparam = "defectId=" + defectID + "&Whoclose=" + employeeID + "&Closedate=" + dbTimestamp.slice(0, 10) + "&status=已关闭";
 
-      
-        var commentTitle = dbTimestamp + " 由 " + FullName + " 关闭" ;
-        // String commentTitle, String commentContent, String commentTime, String userId,
-        // int defectId
+    updateBugStatusC(Upparam);
 
-        //新增评论
-        var param = "defectId=" + defectID + "&commentTitle=" + commentTitle + "&commentContent=" + commentContent + "&commentTime=" + dbTimestamp + "&userId=" + employeeID;
-  
-           insertComment(param);
-        console.log(param)
-    
+
+    var commentTitle = dbTimestamp + " 由 " + FullName + " 关闭";
+    // String commentTitle, String commentContent, String commentTime, String userId,
+    // int defectId
+
+    //新增评论
+    var param = "defectId=" + defectID + "&commentTitle=" + commentTitle + "&commentContent=" + commentContent + "&commentTime=" + dbTimestamp + "&userId=" + employeeID;
+
+    insertComment(param);
+    console.log(param)
+
     $('#saveButton').off('click');
 }
 //添加评论
@@ -540,7 +611,7 @@ function updateBugStatusC(Upparam) {
                 console.log("Updatesuccess")
                 $('#dialogOverlay').remove();
                 $('#dialogBox').remove();
-            }else{
+            } else {
                 console.log(msg.flag);
             }
         }

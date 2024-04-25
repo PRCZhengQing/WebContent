@@ -13,12 +13,11 @@
 	<link rel="stylesheet" href="./css/addbug.css">
 
 	<script src="./js/jquery-3.4.1.min.js"></script>
-	<!-- <script src="./js/ckeditor.js"></script> -->
-	<script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
+	<script src="./js/ckeditor.js"></script>
+	<script src="./js/jquery-ui.js"></script>
+	<script src="./js/addbug.js"></script>
+	<link rel="stylesheet" href="./css/jquery-ui.css">
 
-	<script src="./js/editbug.js"></script>
-	
-	
 
 
 </head>
@@ -42,18 +41,6 @@
 		</div>
 	</div>
 	<script>
-		$(document).ready(function () {
-			// 检查是否存在保存的用户信息
-			var user = JSON.parse(localStorage.getItem("user"));
-			if (!user) {
-				// 如果没有保存的用户信息，跳转到Login.html
-				window.location.href = "Login.html";
-				return;
-			}
-			user = user[0];
-			$("#userName").text(user.Username);
-
-		})
 
 		function out() {
 			localStorage.removeItem("user");
@@ -62,7 +49,7 @@
 	</script>
 
 	<div class="bug-form">
-		<div class="mainheader">
+		<div class="mainheader" id="headText">
 			提Bug
 		</div>
 
@@ -76,14 +63,23 @@
 		</div>
 
 
+
+
 		<div class="form-row">
 			<tr>
-				<th><span class="head-title">当前指派</span></th>
-				<td> <select id="assignee" name="assignee">
-						<option value=""></option>
-					</select></td>
+				<th> <label for="assigneeSelect" style="margin-right: 10px;
+					white-space: nowrap;
+					text-align: right;
+					min-width: 100px;
+					font-weight: 700;
+					padding: 7px;" >指派给：</label>
+				<td> <input id="assigneeInput" type="text" style="padding: 10px;
+					border: 1px solid #ccc;
+					border-radius: 4px;">
 				<th><span class="head-title">截止日期</span></th>
-				<td> <input type="datetime-local" id="due-date" name="due-date"></td>
+				<td> <input type="date" id="duedate" name="due-date" style="padding: 10px;
+					border: 1px solid #ccc;
+					border-radius: 4px;"></td>
 			</tr>
 
 
@@ -93,17 +89,24 @@
 		<div class="form-row">
 			<tr>
 				<th><span class="head-title">Bug类型</span></th>
-				<td> <select id="bug-type" name="bug-type">
-						<option value=""></option>
-						<option value=""></option>
-						<option value=""></option>
-					</select></td>
+				<td>
+					<select id="bugtype" name="bug-type">
+						<option value="">请选择</option>
+						<option value="功能缺陷">功能缺陷</option>
+						<option value="界面问题">界面问题</option>
+						<option value="性能问题">性能问题</option>
+						<option value="安全漏洞">安全漏洞</option>
+						<option value="兼容性问题">兼容性问题</option>
+					</select>
+				</td>
 			</tr>
 
 		</div>
 		<div class="form-row">
 			<th><span class="head-title">Bug标题</span></th>
-			<td><input type="text" id="bug-title" name="bug-title"></td>
+			<td><input type="text" id="bugtitle" name="bug-title" style="padding: 10px;
+				border: 1px solid #ccc;
+				border-radius: 4px;"></td>
 			<th><span class="head-title">严重程度</span></th>
 			<td><select id="severity" name="severity">
 					<option value="1">1</option>
@@ -122,18 +125,24 @@
 
 
 
-		<div class="form-row" >
+		<div class="form-row">
 			<span class="head-title">重现步骤</span>
 			<!-- 富文本编辑器的容器 -->
 			<div id="editor" style="height: 300px;">
-				<p>[步骤]</p><br><p>[结果]</p><br><p>[期望]</p><br>
+				<p>[步骤]</p><br>
+				<p>[结果]</p><br>
+				<p>[期望]</p><br>
 			</div>
 		</div>
-	
+
 		<div class="form-row">
+	
+
+		
 			<tr>
-				<th> <span class="head-title">附件</span></th>
-				<td><input type="file" id="attachment" name="attachment"></td>
+				<form id="upload-form" enctype="multipart/form-data">
+				<input type="file" name="file" id="file-input" required>
+			  </form>
 			</tr>
 
 		</div>

@@ -40,7 +40,32 @@
 			}
 			user = user[0];
 			$("#userName").text(user.Username);
-
+			//获取当前时间，判断当前是上午还是下午还是晚上
+			var now = new Date();
+			var hour = now.getHours();
+			var greeting = "";
+			if (hour < 12) {
+				greeting = "上午好";
+			} else if (hour < 18) {
+				greeting = "下午好";
+			} else {
+				greeting = "晚上好";
+			}
+			$("#hello").text( user.Username +","+ greeting+"!");
+			// text-muted的内容为当前年月日
+			$(".text-muted").text(now.toLocaleDateString());
+			$.ajax({
+				//获取bug列表
+				url: "http://localhost:8080/BugManager/findBugCountByassignedTo",
+				type: "post",
+				data:"employeeId="+user.EmployeeID,
+				success: function (msg) {
+					if(msg.flag=="success"){
+						var bugCount = msg.data;
+						$(".tile-amount").text(bugCount);
+					}
+				}
+			})
 		})
 
 		function out() {
@@ -143,53 +168,7 @@
 							<div class="tile-amount">0</div>
 						</div>
 
-						<div class="col tile">
-							<table class="formclass">
-								<thead class="thead">
-									<tr>
-										<th style="font-size: 16px;">指派给我的Bug</th>
-									</tr>
-									<tr>
-										<th>ID</th>
-										<th>级别</th>
-
-										<th>Bug标题</th>
-										<th>状态</th>
-
-									</tr>
-								</thead>
-								<tbody class="resultList">
-									<tr class="tdcolor">
-										<td>22345</td>
-										<td>1</td>
-
-										<td class="bug-title">
-											1988-0xwsx</td>
-										<td>激活</td>
-
-
-									</tr>
-									<tr class="tdcolor1">
-										<td>22345</td>
-										<td>1</td>
-
-										<td class="bug-title">
-											1988-06-06xwsxwxwxwxwx</td>
-										<td>激活</td>
-
-									</tr>
-
-
-									<tr>
-									</tr>
-
-								</tbody>
-
-
-
-
-							</table>
-						</div>
+						
 					</div>
 
 

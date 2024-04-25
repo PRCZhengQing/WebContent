@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>File Upload and Download</title>
+<script src="./js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<!-- 文件上传表单更正，补全参数 -->
+<form id="upload-form" enctype="multipart/form-data">
+    <input type="text" name="upemployeeId" id="employee-id-input" required>
+    <input type="text" name="bugId" id="bug-id-input" required>
+    <input type="file" name="file" id="file-input" required>
+    <button type="submit">上传文件</button>
+  </form>
+
+<!-- 列表显示所有附件，以便可以下载 -->
+<ul id="attachment-list">
+  <!-- 附件列表项将在这里动态填充 -->
+</ul>
+
+<!-- <script>
+// 文件上传处理
+const uploadForm = document.getElementById('upload-form');
+uploadForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // 获取文件和其他参数
+  const fileInput = document.getElementById('file-input');
+  const employeeIdInput = document.getElementById('employee-id-input');
+  const bugIdInput = document.getElementById('bug-id-input');
+  
+  const file = fileInput.files[0];
+  const upemployeeId = employeeIdInput.value;
+  const bugId = bugIdInput.value;
+
+  // 创建 FormData 对象并添加数据
+  const formData = new FormData();
+  formData.append('file', file);
+  formData.append('upemployeeId', upemployeeId);
+  formData.append('bugId', bugId);
+
+  // 发送POST请求上传文件
+  fetch('http://localhost:8080/BugManager/attachment/upload', {
+  method: 'POST',
+  body: formData
+}).then(response => {
+  if (response.ok) {
+    return response.text(); // 从.text()改，而非.json()
+  }
+  throw new Error('Network response was not ok.');
+})
+.then(data => {
+  console.log('上传成功：', data);
+  // 上传成功后，您可在此更新页面，比如刷新列表显示新上传的文件
+  // fetchAttachments();
+})
+.catch(error => {
+  console.error('上传文件出错：', error);
+  // 上传失败的用户反馈
+});
+});
+
+// 文件下载函数
+function downloadAttachment(attachmentUrl, filename) {
+  fetch(attachmentUrl, {
+    method: 'GET',
+  })
+  .then(response => response.blob())
+  .then(blob => {
+    // 创建一个链接并设置为文件 blob
+    const downloadUrl = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.setAttribute('download', filename);
+    document.body.appendChild(link);
+    link.click();
+
+    // 清理并移除链接
+    link.parentNode.removeChild(link);
+    window.URL.revokeObjectURL(downloadUrl);
+  })
+  .catch(e => {
+    console.error('下载文件时发生错误:', e);
+    // 下载失败的用户反馈
+  });
+}
+
+// 附件列表显示函数（假设fetchAttachments是您的API来获取附件列表）
+function fetchAttachments(bugId) {
+  // 发起带bugId的GET请求
+  fetch(`http://localhost:8080/BugManager/attachment/list/${bugId}`)
+    .then(response => response.json()) // 将响应转为JSON
+    .then(attachments => {
+      const attachmentListElem = document.getElementById('attachment-list');
+      attachmentListElem.innerHTML = ''; // 清空已有列表
+
+      // 遍历附件列表，为每个附件创建列表项和下载链接
+      attachments.forEach(attachment => {
+        const li = document.createElement('li');
+
+        // 检查fileName是否为null或者undefined
+        if (attachment.fileName && attachment.filePath) {
+          li.textContent = attachment.fileName + ' ';
+
+          // 创建下载链接
+          const downloadLink = document.createElement('a');
+          downloadLink.textContent = '下载';
+          downloadLink.href = `http://localhost:8080/BugManager/attachment/download/${attachment.id}`;
+          downloadLink.setAttribute('download', attachment.fileName); // 设置download属性
+          li.appendChild(downloadLink);
+        } else {
+          // 如果fileName为null，设置文本为无可下载文件
+          li.textContent = '无可下载文件';
+        }
+        attachmentListElem.appendChild(li);
+      });
+    })
+    .catch(error => {
+      console.error('获取附件列表时出现错误：', error);
+      // 在此处处理异常，比如显示错误信息给用户
+    });
+}
+
+// 页面加载完成后调用fetchAttachments()函数，传入正确的bugId
+document.addEventListener('DOMContentLoaded', function() {
+  const bugId = 1; // 例：bugId 设为1，具体值应根据实际情况设置
+  fetchAttachments(bugId);
+});
+
+// 当页面加载完成后，获取并显示附件列表
+document.addEventListener('DOMContentLoaded', () => fetchAttachments(bugId));
+</script> -->
+
+<script>
+  $(document).ready(function() {
+    // 文件上传处理
+    $('#upload-form').on('submit', function(event) {
+      event.preventDefault();
+  
+      // 获取文件和其他参数
+      const fileInput = $('#file-input');
+      const employeeIdInput = $('#employee-id-input');
+      const bugIdInput = $('#bug-id-input');
+  
+      const file = fileInput.prop('files')[0];
+      const upemployeeId = employeeIdInput.val().trim();
+      const bugId = bugIdInput.val().trim();
+  
+      // 创建 FormData 对象并添加数据
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('upemployeeId', upemployeeId);
+      formData.append('bugId', bugId);
+  
+      // 发送POST请求上传文件
+      $.ajax({
+        url: 'http://localhost:8080/BugManager/attachment/upload',
+        type: 'POST',
+        data: formData,
+        processData: false, // 必须禁用，因为已使用 FormData
+        contentType: false, // 必须禁用，因为已使用 FormData
+        success: function(data) {
+          console.log('上传成功：', data);
+          // 上传成功后，您可在此更新页面，比如刷新列表显示新上传的文件
+          // fetchAttachments();
+        },
+        error: function(xhr, status, error) {
+          console.error('上传文件出错：', xhr.responseText || error);
+          // 上传失败的用户反馈
+        }
+      });
+    });
+  
+    // 文件下载函数
+    function downloadAttachment(attachmentUrl, filename) {
+      fetch(attachmentUrl, {
+        method: 'GET',
+      })
+      .then(response => response.blob())
+      .then(blob => {
+        const downloadUrl = window.URL.createObjectURL(blob);
+        const link = $('<a>');
+        link.attr('href', downloadUrl);
+        link.attr('download', filename);
+        $('body').append(link);
+        link[0].click();
+        link.remove();
+        window.URL.revokeObjectURL(downloadUrl);
+      })
+      .catch(e => {
+        console.error('下载文件时发生错误:', e);
+        // 下载失败的用户反馈
+      });
+    }
+  
+    // 附件列表显示函数（假设fetchAttachments是您的API来获取附件列表）
+    function fetchAttachments(bugId) {
+      $.get(`http://localhost:8080/BugManager/attachment/list/${bugId}`)
+        .done(function(attachments) {
+          const attachmentListElem = $('#attachment-list');
+          attachmentListElem.empty(); // 清空已有列表
+  
+          const fragment = document.createDocumentFragment();
+  
+          attachments.forEach(attachment => {
+            if (attachment.fileName && attachment.filePath) {
+              const li = $('<li>');
+              li.text(attachment.fileName + ' ');
+  
+              const downloadLink = $('<a>');
+              downloadLink.text('下载');
+              downloadLink.attr('href', `http://localhost:8080/BugManager/attachment/download/${attachment.id}`);
+              downloadLink.attr('download', attachment.fileName);
+              li.append(downloadLink);
+  
+              fragment.appendChild(li[0]);
+            } else {
+              const li = $('<li>');
+              li.text('无可下载文件');
+              fragment.appendChild(li[0]);
+            }
+          });
+  
+          attachmentListElem.append(fragment);
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+          console.error('获取附件列表时出现错误：', jqXHR.responseText || errorThrown);
+          // 在此处处理异常，比如显示错误信息给用户
+        });
+    }
+  
+    // 页面加载完成后调用fetchAttachments()函数，传入正确的bugId
+    // 例：bugId 设为1，具体值应根据实际情况设置
+    fetchAttachments(bugId);
+  });
+  </script>
+</body>
+</html>

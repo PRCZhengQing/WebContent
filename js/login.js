@@ -40,11 +40,24 @@ $(document).ready(function() {
 		})
 	})
 })
-function jump(user) {
-	var user = user[0];
-	var RoleId = user.RoleID.toString();
+function jump(userInput) {
+    // 验证输入是否为数组且不为空
+    if (!Array.isArray(userInput) || userInput.length === 0) {
+        console.error('用户数据无效或缺失。');
+        return;
+    }
 
-	RoleId == "1" ? location.href = "My.html" : location.href = "UserList.html";
+    // 获取用户角色ID，确保其存在且可以安全转换为字符串
+    const user = userInput[0];
+    const RoleId = typeof user.RoleID !== 'undefined' && user.RoleID !== null ? user.RoleID.toString() : '';
 
+    // 检查RoleId是否已正确转换为字符串
+    if (typeof RoleId !== 'string' || RoleId.trim() === '') {
+        console.error('角色ID无效。');
+        return;
+    }
 
+    // 使用严格的比较操作符，并避免硬编码，提高代码的可读性和可维护性
+    const destination = RoleId === '1' ? 'BugList.html' : 'UserList.html';
+    location.href = destination;
 }

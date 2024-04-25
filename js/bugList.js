@@ -19,7 +19,7 @@ $(function () {
     loadBugs(filter);
 
     $("#newBugButton").click(function(){
-        location.href="AddBug.html?action=add"
+        location.href="AddBug.html?action=add";
     })
 
     // 主页文字点击，清空项目和筛选，载入所有Bug
@@ -254,12 +254,12 @@ function loadBugs(filters) {
             $(".formclass tbody .btn[data-action='edit']").on('click', function () {
                 var defectID = $(this).data('defectid');
                 // 跳转到指定的页面
-                window.location.href = 'AddBug.html?action=edit&defectId=' + defectID;
+                window.location.href = 'EditBug.html?action=edit&defectId=' + defectID;
             });
             $(".formclass tbody .btn[data-action='copy']").on('click', function () {
                 var defectID = $(this).data('defectid');
                 // 跳转到指定的页面
-                window.location.href = 'AddBug.html?action=copy&defectId=' + defectID;
+                window.location.href = 'EditBug.html?action=copy&defectId=' + defectID;
             });
 
             // 绑定点击事件到对话框触发列,指派

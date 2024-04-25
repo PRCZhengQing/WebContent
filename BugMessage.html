@@ -7,11 +7,11 @@
 	<title>Bug详情</title>
 
 	<script src="./js/jquery-3.4.1.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="./js/jquery-ui.js"></script>
 	<script src="./js/bugMessage.js"></script>
 	<link rel="stylesheet" href="./css/bugmessage.css">
 	<link rel="stylesheet" href="./css/header.css">
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="./css/jquery-ui.css">
 </head>
 
 <body class="bugview">
@@ -81,7 +81,21 @@
 								<p>[期望]</p><br>
 							</div>
 						</div>
+						<div class="detail" id="attachment-detail" style="display: none;">
+                            <div class="detail-title">附件</div>
+                            <div class="detail-content">
+                                <style>
+                                    .files-list>li>a {display: inline; word-wrap: break-word;}
+                                    .files-list>li>.right-icon {opacity: 1;}
+
+                                    </style>
+                                <ul class="files-list" id="attachment-list" style=" padding-inline-start: 0;">
+                                    <!-- 附件列表将在这里动态生成 -->
+                                </ul>
+                            </div>
+                        </div>
 					</div>
+					<!-- 历史记录 -->
 					<div class="cell">
 						<div class="detail histories" id="actionbox" data-textdiff="文本格式" data-original="原始格式">
 							<style>
@@ -132,7 +146,7 @@
 								<span class="text">关闭</span></a>
 							<div class="divider">
 
-							</div><a href="AddBug.html" class="btn btn-link " title="编辑Bug" id="edit">
+							</div><a href="EditBug.html" class="btn btn-link " title="编辑Bug" id="edit">
 								<i class="icon-common-edit icon-edit"><img class="divider-icon"
 										src="./image/icon/编辑-白.svg"></i></a>
 							<a href="AddBug.html" class="btn btn-link " title="复制Bug" id="copy">

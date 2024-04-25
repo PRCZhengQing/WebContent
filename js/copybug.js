@@ -42,7 +42,7 @@ $("#userName").text(user.FullName);
 		.catch(error => {
 			console.error('There was a problem initializing the editor:', error);
 		});
-EditBug();
+CopyBug();
 		
 
 
@@ -103,45 +103,70 @@ EditBug();
 
 
 
-	$("#submit").click(function () {
-		
-        var projectId = $("#project option:selected").data('id');
-        var bugtype = $("#bugtype").val();
-        var bugtitle = $("#bugtitle").val();
-        var severity = $("#severity").val();
-        var priority = $("#priority").val();
-        var duedate = $("#duedate").val();
-        const editorData = editor.getData();
-        const now = new Date();
-        const isoTimestamp = now.toISOString();
-        const dbTimestamp = toDatabaseDateTime(isoTimestamp);
-		var paramA = "title=" + bugtitle +
-				"&description=" + encodeURIComponent(editorData) +
-				"&status=激活" +
-				"&priority=" + priority +
-				"&severity=" + severity +
-				"&assignedTo=" + assignedT +
-				
-				"&reporterId=" + EmployeeID +
-				"&projectId=" + projectId +
-				"&dueDate=" + encodeURIComponent(duedate) +
-				"&bugType=" + bugtype+
-                "&defectId="+defectId;
+    $("#submit").click(function () {
 
-			addd(paramA,dbTimestamp)
-				
-		
+        $.ajax({
+            url: "http://localhost:8080/BugManager/findLastBug",
+            type: "POST",
+            data: "",
+            success: function (msg) {
+                //msg是字符串，需要转换为数字
+                msg = parseInt(msg);
+                var lastdefectedId = msg + 1;
+                console.log(lastdefectedId);
 
-    console.log(paramA);
+                var projectId = $("#project option:selected").data('id');
+                var bugtype = $("#bugtype").val();
+                var bugtitle = $("#bugtitle").val();
+                var severity = $("#severity").val();
+                var priority = $("#priority").val();
+                var duedate = $("#duedate").val();
+                const editorData = editor.getData();
+                const now = new Date();
+                const isoTimestamp = now.toISOString();
+                const dbTimestamp = toDatabaseDateTime(isoTimestamp);
+                var paramA = "title=" + bugtitle +
+                    "&description=" + encodeURIComponent(editorData) +
+                    "&status=激活" +
+                    "&priority=" + priority +
+                    "&severity=" + severity +
+                    "&assignedTo=" + assignedT +
+                    "&createDate=" + encodeURIComponent(dbTimestamp.slice(0, 10)) +
+                    "&reporterId=" + EmployeeID +
+                    "&projectId=" + projectId +
+                    "&dueDate=" + encodeURIComponent(duedate) +
+                    "&bugType=" + bugtype;
 
-   
-      
+
+
+                if (assignedT == "") {
+                    alert("请选择指派给");
+                    return;
+                }
+                if (bugtitle == "") {
+                    alert("请输入Bug标题");
+                    return;
+                }
+
+                if (editorData == "") {
+                    alert("请输入Bug描述");
+                    return;
+                }
+                if (bugtype == "") {
+                    alert("请选择Bug类型");
+                    return;
+                }
+                addd(paramA, dbTimestamp, lastdefectedId);
+
+                console.log(paramA);
+            }
+        });
     });
 
 
 });
-// 添加Bug的操作
-function EditBug() {
+// 复制Bug的操作
+function CopyBug() {
     // 获取项目列表
     $.ajax({
         type: "post",
@@ -179,62 +204,60 @@ function EditBug() {
             }
         }
     });
-
 }
-function addd(param,dbTimestamp){
-	$.ajax({
-        url: "http://localhost:8080/BugManager/updateBug",
+function addd(param, dbTimestamp, lastdefectedId) {
+    $.ajax({
+        url: "http://localhost:8080/BugManager/insertBug",
         type: "POST",
         data: param,
         success: function (msg) {
             if (msg.flag == "success") {
-                
-                var commentTitle = dbTimestamp + "  " + FullName + " 编辑了Bug " ;
-               
-                var parrm = "defectId=" + defectId + "&commentTitle=" + commentTitle + "&commentContent=" + "" + "&commentTime=" + dbTimestamp.slice(0,19) + "&userId=" + EmployeeID;
-                insertComment(parrm); 
-                               // 获取文件和其他参数
-                               const fileInput = $('#file-input');
-                               const file = fileInput.prop('files')[0];
-                               const upemployeeId = EmployeeID;
-                               const bugId = defectId;
-               
-                               // 创建 FormData 对象并添加数据
-                               const formData = new FormData();
-                               formData.append('file', file);
-                               formData.append('upemployeeId', upemployeeId);
-                               formData.append('bugId', bugId);
-               
-                               // 发送POST请求上传文件
-                               $.ajax({
-                                   url: 'http://localhost:8080/BugManager/attachment/upload',
-                                   type: 'POST',
-                                   data: formData,
-                                   processData: false, // 必须禁用，因为已使用 FormData
-                                   contentType: false, // 必须禁用，因为已使用 FormData
-                                   success: function (data) {
-                                       console.log('上传成功：', data);
-                                       // 上传成功后，您可在此更新页面，比如刷新列表显示新上传的文件
-                                       // fetchAttachments();
-                                       window.location.href = "BugMessage.html?defectId="+defectId;
-                                   },
-                                   error: function (xhr, status, error) {
-                                       console.error('上传文件出错：', xhr.responseText || error);
-                                       // 上传失败的用户反馈
-                                   }
-                               });
-	//新增评论
+                var commentTitle = dbTimestamp + " 由 " + FullName + " 创建 ";
+                //新增评论
+                var parrm = "defectId=" + lastdefectedId + "&commentTitle=" + commentTitle + "&commentContent=" + "" + "&commentTime=" + dbTimestamp.slice(0, 19) + "&userId=" + EmployeeID;
+                console.log(parrm);
+                insertComment(parrm);
+                // 获取文件和其他参数
+                const fileInput = $('#file-input');
+                const file = fileInput.prop('files')[0];
+                const upemployeeId = EmployeeID;
+                const bugId = lastdefectedId;
+
+                // 创建 FormData 对象并添加数据
+                const formData = new FormData();
+                formData.append('file', file);
+                formData.append('upemployeeId', upemployeeId);
+                formData.append('bugId', bugId);
+
+                // 发送POST请求上传文件
+                $.ajax({
+                    url: 'http://localhost:8080/BugManager/attachment/upload',
+                    type: 'POST',
+                    data: formData,
+                    processData: false, // 必须禁用，因为已使用 FormData
+                    contentType: false, // 必须禁用，因为已使用 FormData
+                    success: function (data) {
+                        console.log('上传成功：', data);
+                        // 上传成功后，您可在此更新页面，比如刷新列表显示新上传的文件
+                        // fetchAttachments();
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('上传文件出错：', xhr.responseText || error);
+                        // 上传失败的用户反馈
+                    }
+                });
+                window.location.href = 'BugMessage.html?defectId=' + lastdefectedId;
+
+            } else {
+                alert("添加失败");
 
             }
         }
     });
-	
+
+
+
 }
-
-
-
-
-
 
 
 function toDatabaseDateTime(isoTimestamp) {
@@ -243,10 +266,10 @@ function toDatabaseDateTime(isoTimestamp) {
 
     // 获取本地时间偏移量，并转换为毫秒
     const timezoneOffset = date.getTimezoneOffset() * 60000;
-  
+
     // 根据偏移量调整时间，以得到本地时间
     const localTime = new Date(date.getTime() - timezoneOffset);
-  
+
     // 将本地时间转换为 ISO 字符串，然后格式化
     return localTime.toISOString().replace('T', ' ').replace(/\..*$/, '');
 }
@@ -260,15 +283,14 @@ function insertComment(parram) {
         success: function (msg) {
             if (msg.flag == "success") {
                 console.log("insertComment success");
-
-                
             }
 
         }
     });
 }
+
 function getprojectName(ProjectID, callback) {
-    // 异步请求，无需发送额外数据即可获取所有员工信息
+    // 异步请求，无需发送额外数据即可获取所有项目信息
     $.ajax({
         url: "http://localhost:8080/BugManager/projectList",
         type: "POST",
